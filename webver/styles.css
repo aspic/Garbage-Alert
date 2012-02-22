@@ -1,0 +1,32 @@
+#console
+{
+	position:absolute;
+	bottom:0;
+	left: 2em;
+	width: 500px;
+	height: 200px;
+	background: black;
+	color: lightgreen;
+	overflow: scroll;
+	padding-left: 2em;
+}
+
+#upgradechooser {
+	position: absolute;
+	top: 3em;
+	left: 3em;
+	background: white;
+	width: 200px;
+	height: 200px;
+	visibility: hidden;
+	border: 1px solid black;
+	padding: 1em;
+}
+
+#envCapabilities span {
+	background: green;
+}
+
+#envCapabilities span.false {
+	background: red;
+}

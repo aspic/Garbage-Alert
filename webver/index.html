@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="styles.css"></link>
+	<meta charset="utf8" />
+</head>
+
+
+<body>
+
+<div id="envCapabilities">
+	<span id="hasPapp" class="false">PAPP</span>
+	<span id="hasTre" class="false">TRE</span>
+	<span id="hasPlast" class="false">PLAST</span>
+	<span id="hasJern" class="false">JERN</span>
+	<span id="hasStal" class="false">STÅL</span>
+	<span id="hasTitan" class="false">TITAN</span>
+
+	<button onclick="upgradeEnv()" id="envButton">Oppgradere!</button>
+</div>
+
+<div id="resources">
+	<p>Papp: <span id="papp">0</span></p>
+	<p>Tre: <span id="tre">0</span></p>
+	<p>Plast: <span id="plast">0</span></p>
+	<p>Jern: <span id="jern">0</span></p>
+	<p>Stål: <span id="stal">0</span></p>
+	<p>Titan: <span id="titan">0</span></p>
+</div>
+
+<hr>
+<div>
+
+	<p>Miljøstasjon nivå <span id="envLevel">1</span></p>
+	<p>Mur nivå <span id="defenceLevel">0</span></p>
+	<p>Våpen nivå <span id="attackLevel">0</span></p>
+
+</div>
+
+<hr>
+
+<div id="actions">
+	<button onClick="upgradeEnvThroughput()" id="defenceButton">Oppgradere miljøstasjon</button>
+	<button onClick="upgradeDefence()" id="defenceButton">Kjøp mur</button>
+	<button onClick="upgradeAttack()" id="attackButton">Kjøp våpen</button>
+</div>
+
+<div id="upgradechooser">
+	<h3>Velg oppgradering</h3>
+	<button id="upgradeToPlastButton" onclick="upgradeToPlastButton()" disabled="true">Plast</button>
+	<button id="upgradeToTreButton" onclick="upgradeToTreButton()" disabled="true">Tre</button>
+	<br>
+	<button id="upgradeToStalButton" onclick="upgradeToStalButton()" disabled="true">Stål</button>
+	<button id="upgradeToJernButton" onclick="upgradeToJernButton()" disabled="true">Jern</button>
+	<br>
+	<button id="upgradeToTitanButton" onclick="upgradeToTitanButton()" disabled="true">Titan</button>
+
+	<br><br>
+	<button id="cancelButton" onclick="cancelButton()">Angre</button>
+</div>
+
+<div id="console">
+
+</div>
+
+
+<script src="scripts.js"></script>
+<script src="jquery.js"></script>
+
+<script>
+	$(document).ready(function(){
+		init();
+	});
+</script>
+</body>
+
+</html>
