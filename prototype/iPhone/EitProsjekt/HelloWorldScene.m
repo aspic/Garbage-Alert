@@ -8,26 +8,77 @@
 
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "HelloWorldScene.h"
+#import "AppDelegate.h"
+
+@implementation HelloWorldScene
+@synthesize layer;
+@synthesize hud;
+@synthesize resources;
+
++(id) scene
+{
+	// 'scene' is an autorelease object.
+	HelloWorldScene *scene = [[HelloWorldScene alloc] init];
+	
+	// 'layer' is an autorelease object.
+	HelloWorldLayer *gamelayer = [HelloWorldLayer node];
+    scene.layer = gamelayer;
+	// add layer as a child to scene
+    [scene addChild:scene.layer z:1];
+    
+    scene.resources = [[GameResources alloc] init];
+    
+    GameHUD *gamehud = [GameHUD node];
+    
+    scene.hud = gamehud;
+    [scene addChild:scene.hud z:2];
+    
+    [scene schedule:@selector(updateResources:) interval:1.0];
+    
+	// return the scene
+	return scene;
+}
+
+-(void) updateResources:(ccTime) dt {
+    
+    resources.papp += 1;
+    [self.hud pappEndret:resources.papp];
+    
+    resources.tre += 2;
+    [self.hud treEndret:resources.tre];
+    
+    resources.plast += 3;
+    [self.hud plastEndret:resources.plast];
+    
+    resources.jern += 4;
+    [self.hud jernEndret:resources.jern];
+    
+    resources.staal += 5;
+    [self.hud staalEndret:resources.staal];
+    
+    resources.titan += 6;
+    [self.hud titanEndret:resources.titan];
+}
+
+
++(HelloWorldScene*) get {
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    return delegate.game;
+}
+
+- (void)dealloc {
+    self.layer = nil;
+    [super dealloc];
+}
+
+@end
+
+
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 @synthesize controller;
-
-+(CCScene *) scene
-{
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
-}
 
 // on "init" you need to initialize your instance
 -(id) init
@@ -40,11 +91,6 @@
 		
 		// background
         CCTMXTiledMap *tilemap = [CCTMXTiledMap tiledMapWithTMXFile:@"Test4Player.tmx"];
-		
-		// Load the background layer
-		//CCTMXLayer *background1 = [tilemap layerNamed:@"Tile Layer 1"];
-        
-        //[tilemap.grid.texture setAliasTexParameters];
         
 		// Add the tilemap to this layer
 		[self addChild:tilemap z:1];
