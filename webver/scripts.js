@@ -1,6 +1,6 @@
 var buildTime = 10;
 var yieldAmount = 1;
-var yieldTime = 10000;
+var tickTime = 10000;
 var startResources = 40;
 var buildCost = 5;
 var maxEnvLevel = 3;
@@ -23,8 +23,25 @@ var defenceLevel;
 var envLevel;
 var attackLevel;
 
+// Kostnader for forsvar
+var pappMurNewCost;
+var plastMurNewCost;
+var plastMurUpgradeCost;
+var treMurNewCost;
+var treMurUpgradeCost;
+var jernMurNewCost;
+var jernMurUpgradeCost;
+var stalMurNewCost;
+var stalMurUpgradeCost;
+
+var interval;
+var running;
+
 function init()
 {
+	running = false;
+	document.getElementById('stopButton').attr('disabled', 'disabled');
+
 	papp = startResources;
 	papp = 100;
 	tre = 100;
@@ -32,6 +49,7 @@ function init()
 	jern = 100;
 	stal = 100;
 	titan = 0;
+	updateResources();
 
 	hasPapp = true;
 	hasTre = false;
@@ -44,9 +62,6 @@ function init()
 	defenceLevel = 0;
 	envLevel = 1;
 	attackLevel = 0;
-
-	window.document.getElementById('papp').innerHTML = papp;
-	setInterval('getResources()', yieldTime);
 }
 
 function updateResources()
@@ -346,4 +361,24 @@ function upgradeToTitanButton()
 
 function cancelButton(){
 	$('#upgradechooser').css('visibility', 'hidden');
+}
+
+function startSim(){
+	if(!running){
+		interval = setInterval('getResources()', tickTime);
+		$('#startButton').attr('disabled', 'disabled');
+		$('#stopButton').removeAttr('disabled');
+		document.getElementById('simStatus').innerHTML = "kjører";
+		running = true;
+	}
+}
+
+function stopSim(){
+	if(running){
+		window.clearInterval(interval);
+		$('#stopButton').attr('disabled', 'disabled');
+		$('#startButton').removeAttr('disabled');
+		document.getElementById('simStatus').innerHTML = "pause";
+		running = false;
+	}
 }
