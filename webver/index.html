@@ -34,7 +34,7 @@
 <div>
 
 	<p>Miljøstasjon nivå <span id="envLevel">1</span></p>
-	<p>Mur nivå <span id="defenceLevel">0</span></p>
+	<p>Mur: <span id="defenceLevel">0</span></p>
 	<p>Våpen nivå <span id="attackLevel">0</span></p>
 
 </div>
@@ -61,6 +61,240 @@
 	<button id="cancelButton" onclick="cancelButton()">Angre</button>
 </div>
 
+<div id="defenceUpgradeCard">
+	<h2>Mur</h2>
+	<p id="pappMurNewCost">
+		<button onClick="buyPappMurNew()">Kjøp</button>
+		pappMurNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="plastMurNewCost">
+		<button onClick="buyPlastMurNew()">Kjøp</button>
+		plastMurNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="plastMurUpgradeCost">
+		<button onClick="buyPlastMurUpgrade()">Kjøp</button>
+		plastMurUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="treMurNewCost">
+		<button onClick="trePappMurNew()">Kjøp</button>
+		treMurNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="treMurUpgradeCost">
+		<button onClick="buyTreMurUpgrade()">Kjøp</button>
+		treMurUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="jernMurNewCost">
+		<button onClick="buyJernMurNew()">Kjøp</button>
+		jernMurNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="jernMurUpgradeCost">
+		<button onClick="buyJernMurUpgrade()">Kjøp</button>
+		jernMurUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="stalMurNewCost">
+		<button onClick="buyStalMurNew()">Kjøp</button>
+		stalMurNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="stalMurUpgradeCost">
+		<button onClick="buyStalMurUpgrade()">Kjøp</button>
+		stalMurUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="megaMurNewCost">
+		<button onClick="buyMegaMurNew()">Kjøp</button>
+		megaMurNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="megaMurUpgradeCost">
+		<button onClick="buyMegaMurUpgrade()">Kjøp</button>
+		megaMurUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+
+	<button onclick="closeDefenceCard()">Lukk</button>
+</div>
+
+<div id="attackUpgradeCard">
+	<h2>Angrep</h2>
+	<p id="pappAngrepNewCost">
+		<button onClick="buyPappAngrepNew()">Kjøp</button>
+		pappAngrepNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="plastAngrepNewCost">
+		<button onClick="buyPlastAngrepNew()">Kjøp</button>
+		plastAngrepNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="plastAngrepUpgradeCost">
+		<button onClick="buyPlastAngrepUpgrade()">Kjøp</button>
+		plastAngrepUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="treAngrepNewCost">
+		<button onClick="trePappAngrepNew()">Kjøp</button>
+		treAngrepNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="treAngrepUpgradeCost">
+		<button onClick="buyTreAngrepUpgrade()">Kjøp</button>
+		treAngrepUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="jernAngrepNewCost">
+		<button onClick="buyJernAngrepNew()">Kjøp</button>
+		jernAngrepNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="jernAngrepUpgradeCost">
+		<button onClick="buyJernAngrepUpgrade()">Kjøp</button>
+		jernAngrepUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="stalAngrepNewCost">
+		<button onClick="buyStalAngrepNew()">Kjøp</button>
+		stalAngrepNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="stalAngrepUpgradeCost">
+		<button onClick="buyStalAngrepUpgrade()">Kjøp</button>
+		stalAngrepUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="megaAngrepNewCost">
+		<button onClick="buyMegaAngrepNew()">Kjøp</button>
+		megaAngrepNew = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+	<p id="megaAngrepUpgradeCost">
+		<button onClick="buyMegaAngrepUpgrade()">Kjøp</button>
+		megaAngrepUpgrade = 
+		papp: <span class="pappCost">x</span>
+		plast: <span class="plastCost">x</span>
+		tre: <span class="treCost">x</span>
+		jern: <span class="jernCost">x</span>
+		stål: <span class="stalCost">x</span>
+		titan: <span class="titanCost">x</span>
+	</p>
+
+	<button onclick="closeAttackCard()">Lukk</button>
+</div>
+
+<button onClick="destroyMur()">Ødelegg mur</button>
+
 <p>Status: <span id="simStatus">pause</span></p>
 <button onclick="startSim()" id="startButton">Start</button>
 <button onclick="stopSim()" id="stopButton">Stop</button>
@@ -81,3 +315,19 @@
 </body>
 
 </html>
+
+
+
+<!--
+var pappMurNewCost = {papp: 10};
+var plastMurNewCost = {papp: 15, plast: 10};
+var plastMurUpgradeCost = {plast: 10};
+var treMurNewCost = {papp: 20, tre: 10};
+var treMurUpgradeCost = {tre: 10};
+var jernMurNewCost = {papp: 10, tre: 10, jern: 10};
+var jernMurUpgradeCost = {papp: 5, tre: 5, jern: 10};
+var stalMurNewCost = {papp: 10, plast: 15};
+var stalMurUpgradeCost = {plast: 15};
+var megaMurNewCost = {papp: 20, plast: 20, tre: 20, jern: 20, stal: 20};
+var megaMurUpgradeCost = {papp: 20, plast: 20, tre: 20, jern: 20, stal: 20};
+-->
