@@ -2,9 +2,9 @@
 {
 	position:absolute;
 	bottom:0;
-	left: 2em;
+	right: 2em;
 	width: 500px;
-	height: 200px;
+	height: 50px;
 	background: black;
 	color: lightgreen;
 	overflow: scroll;
@@ -29,4 +29,20 @@
 
 #envCapabilities span.false {
 	background: red;
+}
+
+#defenceUpgradeCard {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: white;
+	visibility: hidden;
+}
+
+#attackUpgradeCard {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: white;
+	visibility: hidden;
 }
