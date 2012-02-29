@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HelloWorldScene.h"
 
 @class RootViewController;
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
 	UIWindow			*window;
 	RootViewController	*viewController;
+    HelloWorldScene     *game;
 }
 
 @property (nonatomic, retain) UIWindow *window;
-
+@property (nonatomic, assign) HelloWorldScene *game;
 @end
