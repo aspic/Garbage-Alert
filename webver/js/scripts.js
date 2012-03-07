@@ -16,7 +16,7 @@ var explosionSpriteSheet;
 var menuMode = false;
 var gameMode = false;
 
-var soundMuted;
+var soundMuted = false;
 
 //TODO: Konvertere til spritesheet
 var groundSpriteImage;
@@ -26,6 +26,12 @@ var projectiles = [];
 var introMusic;
 
 function init(){
+	if (!localStorage.soundMuted){
+    	localStorage.soundMuted = false;
+    }
+    else if(localStorage.soundMuted=='true'){
+    	soundMuted = true;
+    }
 	
 	map = new Map(2);
 
@@ -118,7 +124,17 @@ function drawExplosion(){
 	}
 }
 
-function muteSound(){
-	audioElement.pause();
-	muteSound = true;
+function toggleMute(){
+	console.log(soundMuted);
+	if(!soundMuted){
+		audioElement.pause();
+		soundMuted = true;
+		localStorage.soundMuted = true;
+	}
+	else{
+		audioElement.play();
+		soundMuted = false;
+		localStorage.soundMuted = false;
+	}
+	
 }

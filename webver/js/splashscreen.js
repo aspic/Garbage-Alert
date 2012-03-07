@@ -1,9 +1,9 @@
 var audioElement;
 
 function splash() {
+	audioElement = document.createElement('audio');
+	audioElement.setAttribute('src', '../audio/introMusic.ogg');
 	if(!soundMuted){
-		audioElement = document.createElement('audio');
-		audioElement.setAttribute('src', '../audio/introMusic.ogg');
 		audioElement.play();
 	}
 	
