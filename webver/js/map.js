@@ -27,9 +27,6 @@ function initTwoPlayerMap(){
 	for(var i=0; i<jsonMap.tiles.length ; i++){
 		mapGrid[jsonMap.tiles[i].y][jsonMap.tiles[i].x] = new MapCell(cellSize*jsonMap.tiles[i].x,cellSize*jsonMap.tiles[i].y,cellSize,cellSize,jsonMap.tiles[i].type);
 	}
-
-	// mapGrid[0] = [new MapCell(0,0,20,20,0),new MapCell(20,0,20,20,0)];
-	// mapGrid[1] = [new MapCell(0,20,20,20,0),new MapCell(20,20,20,20,1)];
 }
 
 Map.prototype.draw = function() {
