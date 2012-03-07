@@ -17,7 +17,7 @@ function updateProjectiles(){
 
 		//TODO: bedre
 		console.log(p.y);
-		if(p.y>320){
+		if(p.y>180){
 			destroyProjectile(p);
 		}
 	});
@@ -33,7 +33,7 @@ function destroyProjectile(p){
 	p.active = false;
 	explosionInterval = setInterval(function(){
 		drawExplosion();
-	}, 6); 
+	}, 2); 
 }
 
 function drawProjectiles(){

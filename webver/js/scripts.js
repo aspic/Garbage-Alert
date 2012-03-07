@@ -75,7 +75,7 @@ function startGame(){
 }
 
 function fireProjectile(){
-	projectiles.push(new Projectile(250,50, 1));
+	projectiles.push(new Projectile(120,50, 1));
 }
 
 var exCounter = 0;
@@ -88,10 +88,10 @@ function drawExplosion(){
 		64*jCounter,
 		64,
 		64,
-		180,
-		210,
-		188,
-		218
+		80,
+		110,
+		88,
+		118
 	);
 	exCounter++;
 	iCounter++;
@@ -102,6 +102,8 @@ function drawExplosion(){
 	if(exCounter==26){
 		window.clearInterval(explosionInterval);
 		exCounter = 0;
+		iCounter = 0;
+		jCounter = 0;
 	}
 }
 
