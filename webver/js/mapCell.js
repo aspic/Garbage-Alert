@@ -10,6 +10,8 @@ function MapCell(xPos, yPos, w, h, t){
 	} else if(t == "wall") {
 		this.type = 4;
 	}
+
+	this.highlighted = false;
 }
 
 MapCell.prototype.draw = function() {
@@ -50,4 +52,10 @@ MapCell.prototype.draw = function() {
 		context.fillRect(this.x, this.y, this.width, this.height);
 		break;
 	}
+
+	// if(this.highlighted){
+	// 	context.strokeStyle = 'rgb(255,255,255)';
+	// 	context.strokeRect(this.x,this.y,this.width,this.height);
+	// 	this.highlighted = false;
+	// }
 };

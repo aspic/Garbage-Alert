@@ -1,4 +1,14 @@
+var audioElement;
+
 function splash() {
+	if(!soundMuted){
+		audioElement = document.createElement('audio');
+		audioElement.setAttribute('src', '../audio/introMusic.ogg');
+		audioElement.play();
+	}
+	
+	gameMode = false;
+	menuMode = true;
 
 	this.startbutton = {
 		active: true,
@@ -32,7 +42,6 @@ function drawSplashScreen(){
 
 	// DRAWS BUTTON
 	var b = splashScreen.startbutton;
-	console.log(b.active);
 	context.fillStyle = 'rgb(255,105,180)';
 	context.fillRect(b.x,b.y,b.width,b.height);
 }

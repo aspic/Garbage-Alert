@@ -1,5 +1,3 @@
-
-
 var targetFps = 30;
 var drawInterval;
 var context;
@@ -15,10 +13,17 @@ var ssInterval;
 var projectileInterval;
 var explosionSpriteSheet;
 
+var menuMode = false;
+var gameMode = false;
+
+var soundMuted;
+
 //TODO: Konvertere til spritesheet
 var groundSpriteImage;
 
 var projectiles = [];
+
+var introMusic;
 
 function init(){
 	
@@ -60,6 +65,12 @@ function blank(){
 }
 
 function startGame(){
+	// Disables menu mode, enables game mode
+	audioElement.pause();
+
+	menuMode = false;
+	gameMode = true;
+
 	// Set canvas size to map size.
   	context.canvas.width  = jsonMap.width*cellSize;
   	context.canvas.height = jsonMap.height*cellSize;
@@ -75,7 +86,7 @@ function startGame(){
 }
 
 function fireProjectile(){
-	projectiles.push(new Projectile(120,50, 1));
+	projectiles.push(new Projectile((canvas.width/2)-2,50, 1));
 }
 
 var exCounter = 0;
@@ -88,10 +99,10 @@ function drawExplosion(){
 		64*jCounter,
 		64,
 		64,
-		80,
-		110,
-		88,
-		118
+		(canvas.width/2)-32,
+		150,
+		64,
+		64
 	);
 	exCounter++;
 	iCounter++;
@@ -107,3 +118,7 @@ function drawExplosion(){
 	}
 }
 
+function muteSound(){
+	audioElement.pause();
+	muteSound = true;
+}

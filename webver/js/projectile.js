@@ -3,8 +3,8 @@ function Projectile(startX, startY, dmg){
 	this.active = true;
 	this.x = startX;
 	this.y = startY;
-	this.width = 5;
-	this.height = 5;
+	this.width = 4;
+	this.height = 4;
 	this.damage = dmg;
 	this.vecX = 0;
 	this.vecY = 5;
@@ -16,7 +16,6 @@ function updateProjectiles(){
 		p.y += 1;
 
 		//TODO: bedre
-		console.log(p.y);
 		if(p.y>180){
 			destroyProjectile(p);
 		}
