@@ -22,6 +22,9 @@
 </div>
 
 <div id="resources">
+	<p>Søppel: <span id="garbage">0</span><p>
+	<button onclick="addGarbage()">Legg til søppel</button>
+	<hr>
 	<p>Papp: <span id="papp">0</span></p>
 	<p>Tre: <span id="tre">0</span></p>
 	<p>Plast: <span id="plast">0</span></p>
@@ -45,6 +48,7 @@
 	<button onClick="upgradeEnvThroughput()" id="defenceButton">Oppgradere miljøstasjon</button>
 	<button onClick="upgradeDefence()" id="defenceButton">Kjøp mur</button>
 	<button onClick="upgradeAttack()" id="attackButton">Kjøp våpen</button>
+	<button onclick="fire()" id="fireButton">FIRE!</button>
 </div>
 
 <div id="upgradechooser">
@@ -94,7 +98,7 @@
 		titan: <span class="titanCost">x</span>
 	</p>
 	<p id="treMurNewCost">
-		<button onClick="trePappMurNew()">Kjøp</button>
+		<button onClick="buyTreMurNew()">Kjøp</button>
 		treMurNew = 
 		papp: <span class="pappCost">x</span>
 		plast: <span class="plastCost">x</span>
@@ -210,7 +214,7 @@
 		titan: <span class="titanCost">x</span>
 	</p>
 	<p id="treAngrepNewCost">
-		<button onClick="trePappAngrepNew()">Kjøp</button>
+		<button onClick="buyTreAngrepNew()">Kjøp</button>
 		treAngrepNew = 
 		papp: <span class="pappCost">x</span>
 		plast: <span class="plastCost">x</span>
@@ -294,6 +298,7 @@
 </div>
 
 <button onClick="destroyMur()">Ødelegg mur</button>
+<button onclick="destroyAngrep()">Ødelegg våpen</button>
 
 <p>Status: <span id="simStatus">pause</span></p>
 <button onclick="startSim()" id="startButton">Start</button>

@@ -1,9 +1,11 @@
 var buildTime = 10;
 var yieldAmount = 1;
-var tickTime = 10000;
-var startResources = 40;
+var tickTime = 15000;
+var startResources = {
+	papp: 10, plast: 0, tre: 0, jern:0, stal: 0, titan: 0};
 var buildCost = 5;
-var maxEnvLevel = 3;
+var maxEnvLevel = 4;
+var cooldown = 40000;
 
 var papp;
 var tre;
@@ -11,6 +13,13 @@ var plast;
 var jern;
 var stal;
 var titan;
+
+var pappAccRate;
+var pappAccRate;
+var plastAccRate;
+var jernAccRate;
+var stalAccRate;
+var titanAccRate;
 
 var hasPapp;
 var hasTre;
@@ -22,6 +31,9 @@ var hasTitan;
 var defenceLevel;
 var envLevel;
 var attackLevel;
+
+var garbage;
+var collectionRate;
 
 // Kostnader for forsvar
 var pappMurNewCost = {
@@ -39,9 +51,9 @@ var jernMurNewCost = {
 var jernMurUpgradeCost = {
 	papp: 5, plast: 0, tre: 5, jern: 10, stal: 0, titan: 0};
 var stalMurNewCost = {
-	papp: 10, plast: 15, tre: 0, jern: 0, stal: 0, titan: 0};
+	papp: 20, plast: 15, tre: 0, jern: 0, stal: 15, titan: 0};
 var stalMurUpgradeCost = {
-	papp: 0, plast: 15, tre: 0, jern: 0, stal: 0, titan: 0};
+	papp: 10, plast: 15, tre: 0, jern: 0, stal: 15, titan: 0};
 var megaMurNewCost = {
 	papp: 20, plast: 20, tre: 20, jern: 20, stal: 20, titan: 0};
 var megaMurUpgradeCost = {
@@ -64,13 +76,26 @@ var jernAngrepNewCost = {
 var jernAngrepUpgradeCost = {
 	papp: 5, plast: 0, tre: 5, jern: 10, stal: 0, titan: 0};
 var stalAngrepNewCost = {
-	papp: 10, plast: 15, tre: 0, jern: 0, stal: 0, titan: 0};
+	papp: 10, plast: 15, tre: 0, jern: 0, stal: 30, titan: 0};
 var stalAngrepUpgradeCost = {
-	papp: 0, plast: 15, tre: 0, jern: 0, stal: 0, titan: 0};
+	papp: 0, plast: 15, tre: 0, jern: 0, stal: 30, titan: 0};
 var megaAngrepNewCost = {
-	papp: 20, plast: 20, tre: 20, jern: 20, stal: 20, titan: 0};
+	papp: 20, plast: 20, tre: 20, jern: 20, stal: 20, titan: 20};
 var megaAngrepUpgradeCost = {
-	papp: 20, plast: 20, tre: 20, jern: 20, stal: 20, titan: 0};
+	papp: 20, plast: 20, tre: 20, jern: 20, stal: 20, titan: 20};
+
+
+var upgradeToTreCost = {
+	papp: 20, plast: 0, tre: 0, jern: 0, stal: 0, titan: 0};
+var upgradeToPlastCost = {
+	papp: 20, plast: 0, tre: 0, jern: 0, stal: 0, titan: 0};
+var upgradeToStalCost = {
+	papp: 20, plast: 0, tre: 0, jern: 0, stal: 0, titan: 0};
+var upgradeToJernCost = {
+	papp: 20, plast: 0, tre: 0, jern: 0, stal: 0, titan: 0};
+var upgradeToTitanCost = {
+	papp: 20, plast: 0, tre: 0, jern: 0, stal: 0, titan: 0};
+
 
 var interval;
 var running;
@@ -96,13 +121,14 @@ function init()
 	running = false;
 	$('#stopButton').attr('disabled', 'disabled');
 
-	papp = startResources;
-	papp = 100;
-	tre = 100;
-	plast = 100;
-	jern = 100;
-	stal = 100;
-	titan = 0;
+	papp = startResources.papp;
+	tre = startResources.tre;
+	plast = startResources.plast;
+	jern = startResources.jern;
+	stal = startResources.stal;
+	titan = startResources.titan;
+
+	garbage = 1000;
 	updateResources();
 
 	hasPapp = true;
@@ -120,6 +146,7 @@ function init()
 	hasStalMur = false;
 	hasTitanMur = false;
 	hasMur = false;
+	updateDefence();
 
 	hasPappAngrep = false;
 	hasPlastAngrep = false;
@@ -127,11 +154,15 @@ function init()
 	hasJernAngrep = false;
 	hasStalAngrep = false;
 	hasTitanAngrep = false;
-	hasMur = false;
+	hasAngrep = false;
+	$('#fireButton').attr('disabled', 'disabled');
+	updateAttack();
 
 	defenceLevel = 0;
 	envLevel = 1;
 	attackLevel = 0;
+
+	collectionRate = 10;
 
 	updateDefenceCosts();
 	updateAttackCosts();
@@ -139,6 +170,7 @@ function init()
 
 function updateResources()
 {
+	window.document.getElementById('garbage').innerHTML = garbage;
 	window.document.getElementById('papp').innerHTML = papp;
 	window.document.getElementById('tre').innerHTML = tre;
 	window.document.getElementById('plast').innerHTML = plast;
@@ -175,6 +207,7 @@ function harvestResources(){
 }
 
 function getResources() {
+	garbage -= collectionRate;
 	harvestResources();
 	updateResources();
 }
@@ -351,9 +384,11 @@ function upgradeEnvThroughput(){
 		switch(envLevel){
 			case 1:
 				papp -= 5;
+				yieldAmount += 1;
 				break;
 			case 2:
 				papp -= 30;
+				yieldAmount += 1;
 				if(hasPlast){
 					plast -= 10;
 				}
@@ -361,10 +396,15 @@ function upgradeEnvThroughput(){
 					tre -= 10;
 				}
 				break;
+			case 3:
+				papp -= 50;
+				plast -= 20;
+				tre -= 20;
+				collectionRate = 20;
+				break;
 		}
 		updateResources();
 		envLevel += 1;
-		yieldAmount += 1;
 		window.document.getElementById('envLevel').innerHTML = envLevel;
 
 	}
@@ -379,6 +419,11 @@ function canAffordEnvThroughputUpgrade()
 			case 2:
 				if(papp<30) return false;
 				if((plast >= 10) || (tre>=10)) return true;
+			case 3:
+				if(papp>=50 && plast>=20 && tre>=20)
+					{
+						return true;
+					}
 	}
 	return false;
 }
@@ -394,7 +439,7 @@ function upgradeToPlastButton()
 
 function upgradeToTreButton()
 {
-	papp -= 5;
+	papp -= upgradeToTreCost.papp;
 	hasTre = true;
 	updateResources();
 	updateCapabilities();
@@ -446,6 +491,11 @@ function startSim(){
 		document.getElementById('simStatus').innerHTML = "kjører";
 		running = true;
 	}
+}
+
+function addGarbage()
+{
+	garbage += 100;
 }
 
 function stopSim(){
@@ -949,6 +999,10 @@ function buyMegaAngrepUpgrade(){
 
 function updateAttack()
 {
+	if(hasAngrep)
+	{
+		$('#fireButton').removeAttr('disabled');
+	}
 	if(hasTitanAngrep)
 	{
 		$('#attackLevel').text('mega');
@@ -1191,4 +1245,43 @@ function destroyMur(){
 	hasMur = false;
 
 	updateDefence();
+}
+
+function destroyAngrep()
+{
+	hasPappAngrep = false;
+	hasPlastAngrep = false;
+	hasTreAngrep = false;
+	hasJernAngrep = false;
+	hasStalAngrep = false;
+	hasTitanAngrep = false;
+	hasAngrep = false;
+	updateAttack();
+	$('#fireButton').attr('disabled', 'disabled');
+}
+
+var counter = 0;
+
+function fire()
+{
+	if(hasAngrep)
+	{
+		garbage-=10;
+		counter +=1;
+		
+		setTimeout("cooldown()", cooldown);
+		if(counter==3)
+		{
+			destroyAngrep();
+		}
+		else
+		{
+			$('#fireButton').attr('disabled', 'disabled');
+		}
+	}
+}
+
+function cooldown()
+{
+	$('#fireButton').removeAttr('disabled');
 }

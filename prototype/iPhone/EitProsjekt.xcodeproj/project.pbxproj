@@ -121,13 +121,17 @@
 		AA102ABB14EBB411000150B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA102ABA14EBB411000150B6 /* main.m */; };
 		AA102ABE14EBB411000150B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA102ABD14EBB411000150B6 /* AppDelegate.m */; };
 		AA102AC114EBB411000150B6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA102AC014EBB411000150B6 /* RootViewController.m */; };
-		AA102AC414EBB411000150B6 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA102AC314EBB411000150B6 /* HelloWorldLayer.m */; };
+		AA102AC414EBB411000150B6 /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = AA102AC314EBB411000150B6 /* HelloWorldScene.m */; };
 		AA102ACE14EBB432000150B6 /* Tilemap.png in Resources */ = {isa = PBXBuildFile; fileRef = AA102ACC14EBB432000150B6 /* Tilemap.png */; };
 		AA102AD514EBB547000150B6 /* CCPanZoomController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA102AD414EBB547000150B6 /* CCPanZoomController.m */; };
 		AA102AD914EBBEBA000150B6 /* stasjon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA102AD814EBBEBA000150B6 /* stasjon.png */; };
 		AA102ADB14EBC2A8000150B6 /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = AA102ADA14EBC2A8000150B6 /* ground.png */; };
 		AA102AE114EBC82D000150B6 /* weapon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA102AE014EBC82D000150B6 /* weapon.png */; };
 		AA102AE314EBC83A000150B6 /* Test4Player.tmx in Resources */ = {isa = PBXBuildFile; fileRef = AA102AE214EBC83A000150B6 /* Test4Player.tmx */; };
+		AA2DE17F14FE259400F4796A /* GameHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2DE17E14FE259400F4796A /* GameHUD.m */; };
+		AA2DE18314FE287E00F4796A /* GameResources.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2DE18214FE287E00F4796A /* GameResources.m */; };
+		AA2DE19214FE38D900F4796A /* Font-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = AA2DE19014FE38D900F4796A /* Font-hd.fnt */; };
+		AA2DE19314FE38D900F4796A /* Font-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2DE19114FE38D900F4796A /* Font-hd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -363,8 +367,8 @@
 		AA102ABD14EBB411000150B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AA102ABF14EBB411000150B6 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AA102AC014EBB411000150B6 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		AA102AC214EBB411000150B6 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		AA102AC314EBB411000150B6 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		AA102AC214EBB411000150B6 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
+		AA102AC314EBB411000150B6 /* HelloWorldScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldScene.m; sourceTree = "<group>"; };
 		AA102AC514EBB411000150B6 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		AA102ACC14EBB432000150B6 /* Tilemap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tilemap.png; sourceTree = "<group>"; };
 		AA102AD314EBB547000150B6 /* CCPanZoomController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPanZoomController.h; sourceTree = "<group>"; };
@@ -373,6 +377,12 @@
 		AA102ADA14EBC2A8000150B6 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
 		AA102AE014EBC82D000150B6 /* weapon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weapon.png; sourceTree = "<group>"; };
 		AA102AE214EBC83A000150B6 /* Test4Player.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Test4Player.tmx; sourceTree = "<group>"; };
+		AA2DE17D14FE259400F4796A /* GameHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameHUD.h; sourceTree = "<group>"; };
+		AA2DE17E14FE259400F4796A /* GameHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameHUD.m; sourceTree = "<group>"; };
+		AA2DE18114FE287E00F4796A /* GameResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResources.h; sourceTree = "<group>"; };
+		AA2DE18214FE287E00F4796A /* GameResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResources.m; sourceTree = "<group>"; };
+		AA2DE19014FE38D900F4796A /* Font-hd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Font-hd.fnt"; sourceTree = "<group>"; };
+		AA2DE19114FE38D900F4796A /* Font-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Font-hd.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,8 +443,12 @@
 				AA102ABD14EBB411000150B6 /* AppDelegate.m */,
 				AA102ABF14EBB411000150B6 /* RootViewController.h */,
 				AA102AC014EBB411000150B6 /* RootViewController.m */,
-				AA102AC214EBB411000150B6 /* HelloWorldLayer.h */,
-				AA102AC314EBB411000150B6 /* HelloWorldLayer.m */,
+				AA2DE17D14FE259400F4796A /* GameHUD.h */,
+				AA2DE17E14FE259400F4796A /* GameHUD.m */,
+				AA102AC214EBB411000150B6 /* HelloWorldScene.h */,
+				AA102AC314EBB411000150B6 /* HelloWorldScene.m */,
+				AA2DE18114FE287E00F4796A /* GameResources.h */,
+				AA2DE18214FE287E00F4796A /* GameResources.m */,
 				AA102AD314EBB547000150B6 /* CCPanZoomController.h */,
 				AA102AD414EBB547000150B6 /* CCPanZoomController.m */,
 				AA102AC514EBB411000150B6 /* GameConfig.h */,
@@ -453,6 +467,8 @@
 				AA102ADA14EBC2A8000150B6 /* ground.png */,
 				AA102AE014EBC82D000150B6 /* weapon.png */,
 				AA102AD814EBBEBA000150B6 /* stasjon.png */,
+				AA2DE19014FE38D900F4796A /* Font-hd.fnt */,
+				AA2DE19114FE38D900F4796A /* Font-hd.png */,
 				AA10296C14EBB40E000150B6 /* Default.png */,
 				AA10296E14EBB40E000150B6 /* fps_images.png */,
 				AA10297014EBB40E000150B6 /* Icon-72.png */,
@@ -843,6 +859,8 @@
 				AA102ADB14EBC2A8000150B6 /* ground.png in Resources */,
 				AA102AE114EBC82D000150B6 /* weapon.png in Resources */,
 				AA102AE314EBC83A000150B6 /* Test4Player.tmx in Resources */,
+				AA2DE19214FE38D900F4796A /* Font-hd.fnt in Resources */,
+				AA2DE19314FE38D900F4796A /* Font-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,8 +968,10 @@
 				AA102ABB14EBB411000150B6 /* main.m in Sources */,
 				AA102ABE14EBB411000150B6 /* AppDelegate.m in Sources */,
 				AA102AC114EBB411000150B6 /* RootViewController.m in Sources */,
-				AA102AC414EBB411000150B6 /* HelloWorldLayer.m in Sources */,
+				AA102AC414EBB411000150B6 /* HelloWorldScene.m in Sources */,
 				AA102AD514EBB547000150B6 /* CCPanZoomController.m in Sources */,
+				AA2DE17F14FE259400F4796A /* GameHUD.m in Sources */,
+				AA2DE18314FE287E00F4796A /* GameResources.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1076,7 @@
 				AA102ACA14EBB411000150B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
