@@ -1,0 +1,11 @@
+var twoPlayerMap = [];
+twoPlayerMap[0] = [1,0,0,0,0,0,0,0,0,1];
+twoPlayerMap[1] = [0,0,0,0,0,0,0,0,0,0];
+twoPlayerMap[2] = [0,0,0,0,0,0,0,0,0,0];
+twoPlayerMap[3] = [0,1,1,1,0,0,1,1,1,0];
+twoPlayerMap[4] = [0,1,1,1,0,0,1,1,1,0];
+twoPlayerMap[5] = [0,1,1,1,0,0,1,1,1,0];
+twoPlayerMap[6] = [0,1,1,1,0,0,1,1,1,0];
+twoPlayerMap[7] = [0,0,1,0,0,0,0,1,0,0];
+twoPlayerMap[8] = [0,0,0,0,0,0,0,0,0,0];
+twoPlayerMap[9] = [0,1,0,0,0,0,0,0,1,0];
