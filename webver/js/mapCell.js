@@ -17,6 +17,21 @@ MapCell.prototype.draw = function() {
 		// GRASS
 		context.fillStyle = 'rgb(0,255,0)';
 		context.fillRect(this.x, this.y, this.width, this.height);
+
+		var frame = spritesheetJSON.frames["tre.png"].frame;
+		// console.log(frame);
+		context.drawImage(
+			spriteSheet,
+			frame.x,
+			frame.y,
+			frame.w,
+			frame.h,
+			this.x,
+			this.y,
+			this.width,
+			this.height
+		);
+
 		break;
 	}
 };

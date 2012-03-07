@@ -20,7 +20,7 @@ function initTwoPlayerMap(){
 	for(var i=0; i<twoPlayerMap.length ; i++){
 		mapGrid[i] = [];
 		for(var j=0; j<twoPlayerMap[i].length ; j++){
-			mapGrid[i][j] = new MapCell(cellSize*i,cellSize*j,cellSize,cellSize,twoPlayerMap[i][j]);
+			mapGrid[i][j] = new MapCell(cellSize*j,cellSize*i,cellSize,cellSize,twoPlayerMap[i][j]);
 		}
 	}
 
