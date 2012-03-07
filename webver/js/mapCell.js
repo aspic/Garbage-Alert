@@ -7,6 +7,11 @@ function MapCell(xPos, yPos, w, h, t){
 }
 
 MapCell.prototype.draw = function() {
+	if(this.type!=0){
+		context.fillStyle = 'rgb(0,255,0)';
+		context.fillRect(this.x, this.y, this.width, this.height);
+	}
+
 	switch(this.type){
 	case(0):
 		// WATER
@@ -14,14 +19,12 @@ MapCell.prototype.draw = function() {
 		context.fillRect(this.x, this.y, this.width, this.height);
 		break;
 	case(1):
-		// GRASS
-		context.fillStyle = 'rgb(0,255,0)';
-		context.fillRect(this.x, this.y, this.width, this.height);
-
-		var frame = spritesheetJSON.frames["tre.png"].frame;
+		// var frame = spritesheetJSON.frames["tre.png"].frame;
+		var frame = {x:0, y:0, w:40, h:40};
 		// console.log(frame);
 		context.drawImage(
-			spriteSheet,
+			// spriteSheet,
+			groundSpriteImage,
 			frame.x,
 			frame.y,
 			frame.w,
@@ -31,7 +34,14 @@ MapCell.prototype.draw = function() {
 			this.width,
 			this.height
 		);
-
+		break;
+	case(2):
+		break;
+	case(3):
+		break;
+	case(4):
+		context.fillStyle = 'rgb(0,0,0)';
+		context.fillRect(this.x, this.y, this.width, this.height);
 		break;
 	}
 };

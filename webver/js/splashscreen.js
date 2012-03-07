@@ -1,4 +1,3 @@
-var splashScreen;
 function splash() {
 
 	this.startbutton = {
@@ -9,27 +8,27 @@ function splash() {
 			startGame();
 		},
 		x: 200,
-		y: 10,
+		y: 400,
 		width: 100,
 		height: 50
 	};
 };
 
 function drawSplashScreen(){
-	// var image = new Image();
-	// image.src = "../img/splashscreen.png";
-	// context.drawImage(
-	// 	image,
-	// 	0,
-	// 	0,
-	// 	512,
-	// 	512,
-	// 	0,
-	// 	0,
-	// 	512,
-	// 	512
-	// );
+	context.fillStyle = 'rgb(0,0,0)';
+	context.fillRect(0,0,512,512);
 
+	context.drawImage(
+		splashScreenImage,
+		0,
+		0,
+		892,
+		589,
+		0,
+		0,
+		512,
+		512
+	);
 
 	// DRAWS BUTTON
 	var b = splashScreen.startbutton;
