@@ -7,6 +7,8 @@ function MapCell(xPos, yPos, w, h, t){
 		this.type = 1;
 	} else if(t == "water") {
 		this.type = 0;
+	} else if(t == "wall") {
+		this.type = 4;
 	}
 }
 
