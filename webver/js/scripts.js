@@ -12,12 +12,16 @@ var splashScreenImage;
 var splashScreen;
 var ssInterval;
 
+var projectileInterval;
+var explosionSpriteSheet;
+
 //TODO: Konvertere til spritesheet
 var groundSpriteImage;
 
+var projectiles = [];
+
 function init(){
 	
-	console.log(spritesheetJSON.frames["tre.png"].frame);
 	map = new Map(2);
 
 	initCanvas();
@@ -25,6 +29,9 @@ function init(){
 	spriteSheet.src = '../img/spritesheet.png';
 	splashScreenImage = new Image();
 	splashScreenImage.src = '../img/splashscreen.png';
+
+	explosionSpriteSheet = new Image();
+	explosionSpriteSheet.src = '../img/explosion.png';
 
 	groundSpriteImage = new Image();
 	groundSpriteImage.src = '../img/ground.png';
@@ -44,6 +51,7 @@ function initCanvas(){
 function draw(){
 	blank();
 	map.draw();
+	drawProjectiles();
 }
 
 function blank(){
@@ -56,4 +64,40 @@ function startGame(){
 	drawInterval = window.setInterval(function(){
 		draw();
 	}, 1000/targetFps);
+
+	projectileInterval = setInterval(function(){
+		updateProjectiles();
+	}, 10);
+	fireProjectile();
+}
+
+function fireProjectile(){
+	projectiles.push(new Projectile(250,50, 1));
+}
+
+var exCounter = 0;
+var iCounter = 0;
+var jCounter = 0;
+function drawExplosion(){
+	context.drawImage(
+		explosionSpriteSheet,
+		64*iCounter,
+		64*jCounter,
+		64,
+		64,
+		180,
+		210,
+		188,
+		218
+	);
+	exCounter++;
+	iCounter++;
+	if(iCounter==5){
+		iCounter = 0;
+		jCounter ++;
+	}
+	if(exCounter==26){
+		window.clearInterval(explosionInterval);
+		exCounter = 0;
+	}
 }
