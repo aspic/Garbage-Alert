@@ -60,6 +60,9 @@ function blank(){
 }
 
 function startGame(){
+	// Set canvas size to map size.
+  	context.canvas.width  = jsonMap.width*cellSize;
+  	context.canvas.height = jsonMap.height*cellSize;
 	window.clearInterval(ssInterval);
 	drawInterval = window.setInterval(function(){
 		draw();
@@ -101,3 +104,4 @@ function drawExplosion(){
 		exCounter = 0;
 	}
 }
+

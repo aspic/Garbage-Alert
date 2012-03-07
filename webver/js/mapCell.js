@@ -1,9 +1,15 @@
 function MapCell(xPos, yPos, w, h, t){
 	this.width = w;
 	this.height = h;
-	this.type = t;
 	this.x = xPos;
 	this.y = yPos;
+	if(t == "grass") {
+		this.type = 1;
+	} else if(t == "water") {
+		this.type = 0;
+	} else if(t == "wall") {
+		this.type = 4;
+	}
 }
 
 MapCell.prototype.draw = function() {
