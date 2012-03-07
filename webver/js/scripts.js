@@ -8,6 +8,12 @@ var canvas;
 var map;
 var spriteSheetJSON;
 var spriteSheet;
+var splashScreenImage;
+var splashScreen;
+var ssInterval;
+
+//TODO: Konvertere til spritesheet
+var groundSpriteImage;
 
 function init(){
 	
@@ -17,10 +23,17 @@ function init(){
 	initCanvas();
 	spriteSheet = new Image();
 	spriteSheet.src = '../img/spritesheet.png';
+	splashScreenImage = new Image();
+	splashScreenImage.src = '../img/splashscreen.png';
+
+	groundSpriteImage = new Image();
+	groundSpriteImage.src = '../img/ground.png';
 
 	splashScreen = new splash();
 	initMouseListener();
-	drawSplashScreen();
+	ssInterval = setInterval(function(){
+		drawSplashScreen();
+	}, targetFps/1000);
 }
 
 function initCanvas(){
@@ -39,6 +52,7 @@ function blank(){
 }
 
 function startGame(){
+	window.clearInterval(ssInterval);
 	drawInterval = window.setInterval(function(){
 		draw();
 	}, 1000/targetFps);
