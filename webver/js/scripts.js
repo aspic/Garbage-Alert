@@ -52,6 +52,8 @@ function init(){
 	ssInterval = setInterval(function(){
 		drawSplashScreen();
 	}, targetFps/1000);
+
+	initOld();
 }
 
 function initCanvas(){
