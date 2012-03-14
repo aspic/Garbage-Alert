@@ -44,4 +44,9 @@ function drawSplashScreen(){
 	var b = splashScreen.startbutton;
 	context.fillStyle = 'rgb(255,105,180)';
 	context.fillRect(b.x,b.y,b.width,b.height);
+
+	context.fillStyle    = '#00f';
+	context.font         = '30px monospace';
+	context.textBaseline = 'top';
+	context.fillText  ('Start', b.x+5, b.y+5);
 }
