@@ -116,7 +116,7 @@ var hasStalAngrep;
 var hasTitanAngrep;
 var hasAngrep;
 
-function init()
+function initOld()
 {
 	running = false;
 	$('#stopButton').attr('disabled', 'disabled');
