@@ -5,7 +5,7 @@
 %%% Date: February 2011
 
 %%% Preamble
-\documentclass[paper=a4, fontsize=11pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
+\documentclass[paper=a4, fontsize=12pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
 
 \usepackage[english]{babel}															% English language/hyphenation
 \usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
@@ -16,7 +16,8 @@
 \usepackage{epstopdf}																	% Converts .eps to .pdf
 \usepackage{subfig}																		% Subfigures
 \usepackage{booktabs}																	% Nicer tables
-
+\usepackage[utf8]{inputenc} % We want UTF8
+\usepackage{url}
 
 %%% Advanced verbatim environment
 \usepackage{verbatim}
@@ -51,7 +52,6 @@
 \numberwithin{figure}{section}																% Figurenumbering: section.fig#
 \numberwithin{table}{section}																% Tablenumbering: section.tab#
 
-
 %%% Title	
 \title{ \vspace{-1in} 	\usefont{OT1}{bch}{b}{n}
 		\huge \strut Eksperter i Team  \strut \\
@@ -65,12 +65,17 @@
 \date{}
 
 %%% Begin document
+
 \begin{document}
 \maketitle
 % Add the chapters
 \include{intro}
-\include{theidea}
+\include{problem}
+\include{process}
+\include{concept}
 \include{dynamics}
 \include{genre}
 \include{artwork}
+\include{references}
+\include{conclusion}
 \end{document}
