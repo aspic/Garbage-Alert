@@ -5,7 +5,7 @@
 %%% Date: February 2011
 
 %%% Preamble
-\documentclass[paper=a4, fontsize=11pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
+\documentclass[paper=a4, fontsize=12pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
 
 \usepackage[english]{babel}															% English language/hyphenation
 \usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
@@ -16,6 +16,8 @@
 \usepackage{epstopdf}																	% Converts .eps to .pdf
 \usepackage{subfig}																		% Subfigures
 \usepackage{booktabs}																	% Nicer tables
+\usepackage[utf8]{inputenc} % We want UTF8
+\usepackage{url}
 
 
 %%% Advanced verbatim environment
@@ -69,8 +71,11 @@
 \maketitle
 % Add the chapters
 \include{intro}
+\include{problem}
+\include{process}
 \include{theidea}
 \include{dynamics}
 \include{genre}
 \include{artwork}
+\include{references}
 \end{document}
