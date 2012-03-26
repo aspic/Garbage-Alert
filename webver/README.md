@@ -1,6 +1,6 @@
 # A web protoype for garbarge alert.
 
-## How to try
+## How to play
 Step into the web directory:
 
 > cd /some/path/project/webver
@@ -11,4 +11,3 @@ Start a simple HTTP server
 
 Connect to the server through a web browser. The URL is
    http://localhost:8000
-

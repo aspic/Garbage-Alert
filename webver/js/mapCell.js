@@ -10,8 +10,20 @@ function MapCell(xPos, yPos, w, h, t){
 	} else if(t == "wall") {
 		this.type = 4;
 	}
+	else if(t == "factory"){
+		this.type = 2;
+		factories.push(new Factory(this.x, this.y, this.width, this.height));
+		this.f = function(){
+			console.log("this is a factory");
+			factoryUpgradeMenu.toggleActive();
+		}
+	}
+}
 
-	this.highlighted = false;
+MapCell.prototype.click = function(){
+	if(this.f != undefined){
+		this.f();	
+	}
 }
 
 MapCell.prototype.draw = function() {
@@ -44,6 +56,7 @@ MapCell.prototype.draw = function() {
 		);
 		break;
 	case(2):
+		factories[0].draw();
 		break;
 	case(3):
 		break;
@@ -52,10 +65,5 @@ MapCell.prototype.draw = function() {
 		context.fillRect(this.x, this.y, this.width, this.height);
 		break;
 	}
-
-	// if(this.highlighted){
-	// 	context.strokeStyle = 'rgb(255,255,255)';
-	// 	context.strokeRect(this.x,this.y,this.width,this.height);
-	// 	this.highlighted = false;
-	// }
 };
+

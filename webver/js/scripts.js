@@ -62,9 +62,17 @@ function initCanvas(){
 }
 
 function draw(){
-	blank();
+	context.clearRect(0,0,canvas.width, canvas.height);
 	map.draw();
 	drawProjectiles();
+	drawMenus();
+}
+
+var activeMenus = [];
+function drawMenus(){
+	activeMenus.forEach(function(m){
+		m.draw();
+	});
 }
 
 function blank(){
