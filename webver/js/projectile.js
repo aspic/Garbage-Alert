@@ -30,10 +30,46 @@ function updateProjectiles(){
 var explosionInterval;
 function destroyProjectile(p){
 	p.active = false;
-	explosionInterval = setInterval(function(){
-		drawExplosion();
-	}, 2); 
+	explosions.push(new Explosion(p.x, p.y));
 }
+
+var explosions = [];
+function Explosion(x, y){
+	this.isActive = true;
+	this.x = x;
+	this.y = y;
+	this.exCounter = 0;
+	this.iCounter = 0;
+	this.jCounter = 0;
+}
+
+Explosion.prototype.draw = function() {
+	context.drawImage(
+		explosionSpriteSheet,
+		64*this.iCounter,
+		64*this.jCounter,
+		64,
+		64,
+		this.x,
+		this.y,
+		64,
+		64
+	);
+	this.exCounter++;
+	this.iCounter++;
+	if(this.iCounter==5){
+		this.iCounter = 0;
+		this.jCounter ++;
+	}
+	if(this.exCounter==26){
+		this.isActive = false;
+		explosions = explosions.filter(function(e){
+			if(e.isActive){
+				return e;
+			}
+		});
+	}
+};
 
 function drawProjectiles(){
 	projectiles.forEach(function(p){

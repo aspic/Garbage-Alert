@@ -9,8 +9,10 @@ function MapCell(xPos, yPos, w, h, t){
 		this.type = 0;
 	} else if(t == "wall") {
 		this.type = 4;
-	}
-	else if(t == "factory"){
+	} else if(t=="weapon"){
+		this.type = 3;
+		this.tileType = new Weapon(this.x, this.y, this.width, this.height);
+	} else if(t == "factory"){
 		this.type = 2;
 		factories.push(new Factory(this.x, this.y, this.width, this.height));
 		this.f = function(){
@@ -59,6 +61,7 @@ MapCell.prototype.draw = function() {
 		factories[0].draw();
 		break;
 	case(3):
+		this.tileType.draw();
 		break;
 	case(4):
 		context.fillStyle = 'rgb(0,0,0)';

@@ -65,6 +65,7 @@ function draw(){
 	context.clearRect(0,0,canvas.width, canvas.height);
 	map.draw();
 	drawProjectiles();
+	drawExplosions();
 	drawMenus();
 }
 
@@ -105,14 +106,15 @@ function fireProjectile(){
 	projectiles.push(new Projectile((canvas.width/2)-2,50, 1));
 }
 
-var exCounter = 0;
-var iCounter = 0;
-var jCounter = 0;
-function drawExplosion(){
+
+
+function drawExplosions(){
+	explosions.forEach(function(ex){
+		console.log('drawing explosion');
 	context.drawImage(
 		explosionSpriteSheet,
-		64*iCounter,
-		64*jCounter,
+		64*ex.iCounter,
+		64*ex.jCounter,
 		64,
 		64,
 		(canvas.width/2)-32,
@@ -120,18 +122,21 @@ function drawExplosion(){
 		64,
 		64
 	);
-	exCounter++;
-	iCounter++;
-	if(iCounter==5){
-		iCounter = 0;
-		jCounter ++;
+	ex.exCounter++;
+	ex.iCounter++;
+	if(ex.iCounter==5){
+		ex.iCounter = 0;
+		ex.jCounter ++;
 	}
-	if(exCounter==26){
-		window.clearInterval(explosionInterval);
-		exCounter = 0;
-		iCounter = 0;
-		jCounter = 0;
+	if(ex.exCounter==26){
+		ex.isActive = false;
+		explosions = explosions.filter(function(e){
+			if(e.isActive){
+				return e;
+			}
+		});
 	}
+	});
 }
 
 function toggleMute(){
