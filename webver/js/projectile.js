@@ -71,9 +71,22 @@ Explosion.prototype.draw = function() {
 	}
 };
 
+function fireProjectile(){
+	projectiles.push(new Projectile((canvas.width/2)-2,50, 1));
+}
+
+
 function drawProjectiles(){
 	projectiles.forEach(function(p){
 		context.fillStyle = 'rgb(255,255,255)';
 		context.fillRect(p.x, p.y, p.width, p.height);
 	})
+}
+
+
+
+function drawExplosions(){
+	explosions.forEach(function(ex){
+		ex.draw();
+	});
 }

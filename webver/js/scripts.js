@@ -102,43 +102,6 @@ function startGame(){
 	fireProjectile();
 }
 
-function fireProjectile(){
-	projectiles.push(new Projectile((canvas.width/2)-2,50, 1));
-}
-
-
-
-function drawExplosions(){
-	explosions.forEach(function(ex){
-		console.log('drawing explosion');
-	context.drawImage(
-		explosionSpriteSheet,
-		64*ex.iCounter,
-		64*ex.jCounter,
-		64,
-		64,
-		(canvas.width/2)-32,
-		150,
-		64,
-		64
-	);
-	ex.exCounter++;
-	ex.iCounter++;
-	if(ex.iCounter==5){
-		ex.iCounter = 0;
-		ex.jCounter ++;
-	}
-	if(ex.exCounter==26){
-		ex.isActive = false;
-		explosions = explosions.filter(function(e){
-			if(e.isActive){
-				return e;
-			}
-		});
-	}
-	});
-}
-
 function toggleMute(){
 	console.log(soundMuted);
 	if(!soundMuted){
