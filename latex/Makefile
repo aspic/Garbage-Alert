@@ -1,7 +1,7 @@
 tex = Rapport.tex
 report = $(patsubst %.tex, %.pdf, $(tex))
 texs = $(wildcard *.tex)
-imgs = $(wildcard img/*.pdf)
+#imgs = $(wildcard img/*.pdf)
 
 all : $(report)
 
