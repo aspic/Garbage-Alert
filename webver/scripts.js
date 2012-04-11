@@ -1,6 +1,7 @@
 var buildTime = 10;
 var yieldAmount = 1;
 var tickTime = 15000;
+var tickTime = 1000;
 var startResources = {
 	papp: 10, plast: 0, tre: 0, jern:0, stal: 0, titan: 0};
 var buildCost = 5;
@@ -170,46 +171,19 @@ function initOld()
 
 function updateResources()
 {
-	window.document.getElementById('garbage').innerHTML = garbage;
-	window.document.getElementById('papp').innerHTML = papp;
-	window.document.getElementById('tre').innerHTML = tre;
-	window.document.getElementById('plast').innerHTML = plast;
-	window.document.getElementById('jern').innerHTML = jern;
-	window.document.getElementById('stal').innerHTML = stal;
-	window.document.getElementById('titan').innerHTML = titan;
-}
-
-function harvestResources(){
-	if(hasPapp){
-		papp += yieldAmount;
-		cwrite('get papp');
-	}
-	if(hasTre){
-		tre += yieldAmount;
-		cwrite('get tre');
-	}
-	if(hasPlast){
-		plast += yieldAmount;
-		cwrite('get plast');
-	}
-	if(hasJern){
-		jern += yieldAmount;
-		cwrite('get jern');
-	}
-	if(hasStal){
-		stal += yieldAmount;
-		cwrite('get stål');
-	}
-	if(hasTitan){
-		titan += yieldAmount;
-		cwrite('get titan');
-	}
+	// window.document.getElementById('garbage').innerHTML = garbage;
+	// window.document.getElementById('papp').innerHTML = papp;
+	// window.document.getElementById('tre').innerHTML = tre;
+	// window.document.getElementById('plast').innerHTML = plast;
+	// window.document.getElementById('jern').innerHTML = jern;
+	// window.document.getElementById('stal').innerHTML = stal;
+	// window.document.getElementById('titan').innerHTML = titan;
 }
 
 function getResources() {
 	garbage -= collectionRate;
 	harvestResources();
-	updateResources();
+	// updateResources();
 }
 
 function upgradeEnv()
@@ -426,57 +400,6 @@ function canAffordEnvThroughputUpgrade()
 					}
 	}
 	return false;
-}
-
-function upgradeToPlastButton() 
-{
-	papp -= 5;
-	hasPlast = true;
-	updateCapabilities();
-	updateResources();
-	$('#upgradechooser').css('visibility', 'hidden');
-}
-
-function upgradeToTreButton()
-{
-	papp -= upgradeToTreCost.papp;
-	hasTre = true;
-	updateResources();
-	updateCapabilities();
-	$('#upgradechooser').css('visibility', 'hidden');
-}
-
-function upgradeToJernButton() 
-{
-	papp -= 10;
-	tre -= 25;
-	hasJern = true;
-	updateCapabilities();
-	updateResources();
-	$('#upgradechooser').css('visibility', 'hidden');
-}
-
-function upgradeToStalButton()
-{
-	papp -= 10;
-	plast -= 40;
-	hasStal = true;
-	updateResources();
-	updateCapabilities();
-	$('#upgradechooser').css('visibility', 'hidden');
-}
-
-function upgradeToTitanButton()
-{
-	papp -= 50;
-	tre -= 50;
-	plast -= 50;
-	stal -= 50;
-	jern -= 50;
-	hasTitan = true;
-	updateResources();
-	updateCapabilities();
-	$('#upgradechooser').css('visibility', 'hidden');
 }
 
 function cancelButton(){

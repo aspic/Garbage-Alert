@@ -22,6 +22,7 @@ var soundMuted = false;
 var groundSpriteImage;
 var resourceSpriteImage;
 var buildingSpriteImage;
+var deniedSpriteImage;
 
 var projectiles = [];
 
@@ -54,6 +55,9 @@ function init(){
 
 	buildingSpriteImage = new Image();
 	buildingSpriteImage.src = '../img/Bygninger.gif';
+
+	deniedSpriteImage = new Image();
+	deniedSpriteImage.src = '../img/Forbudt.gif';
 
 	splashScreen = new splash();
 	initMouseListener();
@@ -123,4 +127,39 @@ function toggleMute(){
 		localStorage.soundMuted = false;
 	}
 	
+}
+
+
+
+function harvestResources(){
+	resources.resourceIcons.forEach(function(i){
+		if(i.isAvailable){
+			i.amount += yieldAmount;
+		}
+	});
+
+	if(resources.getResourceIcon('cardboard').isAvailable){
+		papp += yieldAmount;
+		cwrite('get papp');
+	}
+	if(resources.getResourceIcon('wood').isAvailable){
+		tre += yieldAmount;
+		cwrite('get tre');
+	}
+	if(resources.getResourceIcon('plastic').isAvailable){
+		plast += yieldAmount;
+		cwrite('get plast');
+	}
+	if(resources.getResourceIcon('iron').isAvailable){
+		jern += yieldAmount;
+		cwrite('get jern');
+	}
+	if(resources.getResourceIcon('steel').isAvailable){
+		stal += yieldAmount;
+		cwrite('get stål');
+	}
+	if(resources.getResourceIcon('titanium').isAvailable){
+		titan += yieldAmount;
+		cwrite('get titan');
+	}
 }

@@ -34,12 +34,12 @@
 					<p>Søppel: <span id="garbage">0</span><p>
 					<button onclick="addGarbage()">Legg til søppel</button>
 
-					<div class="envCapabilities"><span id="hasPapp" class="false denomination">Papp:</span> <span id="papp">0</span></div>
+					<!-- <div class="envCapabilities"><span id="hasPapp" class="false denomination">Papp:</span> <span id="papp">0</span></div>
 					<div class="envCapabilities"><span id="hasTre" class="false denomination">Tre:</span> <span id="tre">0</span></div>
 					<div class="envCapabilities"><span id="hasPlast" class="false denomination">Plast:</span> <span id="plast">0</span></div>
 					<div class="envCapabilities"><span id="hasJern" class="false denomination">Jern:</span> <span id="jern">0</span></div>
 					<div class="envCapabilities"><span id="hasStal" class="false denomination">Stål:</span> <span id="stal">0</span></div>
-					<div class="envCapabilities"><span id="hasTitan" class="false denomination">Titan:</span> <span id="titan">0</span></div>
+					<div class="envCapabilities"><span id="hasTitan" class="false denomination">Titan:</span> <span id="titan">0</span></div> -->
 				</div>
 
 			<div>
@@ -61,13 +61,13 @@
 
 <div id="upgradechooser">
 	<h3>Velg oppgradering</h3>
-	<button id="upgradeToPlastButton" onclick="upgradeToPlastButton()" disabled="true">Plast</button>
-	<button id="upgradeToTreButton" onclick="upgradeToTreButton()" disabled="true">Tre</button>
+	<button id="upgradeToPlastButton" onclick="upgradeToPlastic()" disabled="true">Plast</button>
+	<button id="upgradeToTreButton" onclick="upgradeToWood()" disabled="true">Tre</button>
 	<br>
-	<button id="upgradeToStalButton" onclick="upgradeToStalButton()" disabled="true">Stål</button>
-	<button id="upgradeToJernButton" onclick="upgradeToJernButton()" disabled="true">Jern</button>
+	<button id="upgradeToStalButton" onclick="upgradeToSteel()" disabled="true">Stål</button>
+	<button id="upgradeToIron" onclick="upgradeToJernButton()" disabled="true">Jern</button>
 	<br>
-	<button id="upgradeToTitanButton" onclick="upgradeToTitanButton()" disabled="true">Titan</button>
+	<button id="upgradeToTitanium" onclick="upgradeToTitanButton()" disabled="true">Titan</button>
 
 	<br><br>
 	<button id="cancelButton" onclick="cancelButton()">Angre</button>
@@ -335,6 +335,7 @@
   <script type="text/javascript" src="js/WeaponType.js"></script>
 
 	<script type="text/javascript" src="js/Resources.js"></script>
+	<script type="text/javascript" src="js/CapabilityUpgrade.js"></script>
   
 
 

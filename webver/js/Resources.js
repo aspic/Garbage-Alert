@@ -15,7 +15,26 @@ function Resources(x,y,w,h){
 		new ResourceIcon('steel', this.x+200, this.y+5, 16, 16),
 		new ResourceIcon('titanium', this.x+250, this.y+5, 16, 16)
 	];
+
+	this.resourceIcons[0].isAvailable = true;
 }
+
+Resources.prototype.getResourceIcon = function(query) {
+	switch(query){
+		case 'cardboard':
+			return this.resourceIcons[0];
+		case 'wood':
+			return this.resourceIcons[1];
+		case 'plastic':
+			return this.resourceIcons[2];
+		case 'iron':
+			return this.resourceIcons[3];
+		case 'steel':
+			return this.resourceIcons[4];
+		case 'titanium':
+			return this.resourceIcons[5];
+	}
+};
 
 Resources.prototype.draw = function() {
 	context.fillStyle = 'rgba(0, 0, 0, 0.7)';
@@ -37,6 +56,7 @@ function ResourceIcon(type, x, y, w, h){
 	this.y = y;
 	this.w = w;
 	this.h = h;
+	this.isAvailable = false;
 
 	switch(this.type){
 		case 'cardboard':
@@ -96,6 +116,20 @@ ResourceIcon.prototype.draw = function() {
 			this.w,
 			this.h
 		);
+
+	if(!this.isAvailable){
+		context.drawImage(
+			deniedSpriteImage,
+			0,
+			0,
+			16,
+			16,
+			this.x,
+			this.y,
+			this.w,
+			this.h
+		);
+	}
 	
 	context.fillStyle    = '#fff';
 	context.font         = '12px monospace';
