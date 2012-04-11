@@ -51,23 +51,14 @@
 \numberwithin{equation}{section}															% Equationnumbering: section.eq#
 \numberwithin{figure}{section}																% Figurenumbering: section.fig#
 \numberwithin{table}{section}																% Tablenumbering: section.tab#
-
-%%% Title	
-\title{ \vspace{-1in} 	\usefont{OT1}{bch}{b}{n}
-		\huge \strut Eksperter i Team  \strut \\
-		\Large \bfseries \strut Konseptdokument \strut
-}
-\author{ 									\usefont{OT1}{bch}{m}{n}
-        Forfattere etc\\		\usefont{OT1}{bch}{m}{n}
-        Norges teknisk-naturvitenskapelige universitet\\ \usefont{OT1}{bch}{m}{n}
-        Institutt for kunst- og medievitenskap\\
-}
-\date{}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % command to make the lines in title page
 
 %%% Begin document
 
 \begin{document}
-\maketitle
+\include{title}
+\newpage
+\tableofcontents
 % Add the chapters
 \include{intro}
 \include{problem}
