@@ -12,9 +12,11 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % command to make the lines in title page
 \linespread{1.2}
 
+% Redefinere referansesaken
+\renewcommand{\refname}{Referanser}
+
 %%% BEGIN DOCUMENT
 \begin{document}
-\include{dynamic} % 
 \input{title.tex} % TITLE PAGE
 
 \tableofcontents
@@ -22,9 +24,7 @@
 \newpage
 
 % Sections
-\begin{abstract}
-Oppsummering av rapporten, 200 ord. Relatere til EiTs læringsmål.
-\end{abstract}
+\include{abstract}
 
 % Innledning
 \include{innledning}
@@ -39,6 +39,7 @@ Oppsummering av rapporten, 200 ord. Relatere til EiTs læringsmål.
 \include{avslutning}
 
 % Referanser
-\include{referanser}
+\bibliographystyle{plain}
+\bibliography{referanser}
 
 \end{document}
