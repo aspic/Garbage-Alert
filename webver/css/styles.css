@@ -159,4 +159,9 @@ div.envCapabilities {
   top:0;
   left: 0;
   width: 70%;
+  -o-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  -moz-user-select: none
+  user-select: none
 }

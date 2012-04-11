@@ -71,8 +71,8 @@ Explosion.prototype.draw = function() {
 	}
 };
 
-function fireProjectile(){
-	projectiles.push(new Projectile((canvas.width/2)-2,50, 1));
+function fireProjectile(weapon){
+	projectiles.push(new Projectile(weapon.x+(weapon.width/2), weapon.y +(weapon.width/2) ));
 }
 
 

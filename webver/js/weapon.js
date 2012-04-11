@@ -1,5 +1,6 @@
 var weapons = [];
 
+var weaponPidCounter = 0;
 function Weapon(x, y, w, h){
 	this.weapontype = CardboardWeapon;
 	this.x = x;
@@ -10,11 +11,23 @@ function Weapon(x, y, w, h){
 	this.f = function(){
 		weaponMenu.draw();
 	};
+
+	this.pid = weaponPidCounter;
+	weaponPidCounter++;
 };
 
 Weapon.prototype.draw = function() {
-	context.fillStyle = 'rgb(255,105,180)';
-	context.fillRect(this.x, this.y, this.width, this.height);
+	context.drawImage(
+		buildingSpriteImage,
+		40+(20*this.pid),
+		0,
+		20,
+		20,
+		this.x,
+		this.y,
+		this.width,
+		this.height
+	);
 };
 
 
