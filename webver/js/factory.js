@@ -1,11 +1,14 @@
 var factories = [];
 
+var factoryPidCounter = 0;
 function Factory(xPos, yPos, width, height){
 	this.x = xPos;
 	this.y = yPos;
 	this.w = width;
 	this.h = height;
 	this.flair = [];
+	this.pid = factoryPidCounter;
+	factoryPidCounter++;
 }
 
 function UpgradeFactoryFlair(data){
@@ -19,12 +22,21 @@ function UpgradeFactoryFlair(data){
 }
 
 Factory.prototype.draw = function() {
-	context.fillStyle = 'rgb(0, 255, 0)';
-	context.fillRect(this.x, this.y, this.w, this.h);
+	context.drawImage(
+		buildingSpriteImage,
+		20*this.pid,
+		0,
+		20,
+		20,
+		this.x,
+		this.y,
+		this.w,
+		this.h
+	);
 
 	this.flair.forEach(function(f){
 		f.draw();
-	})
+	});
 }
 
 Factory.prototype.update = function() {

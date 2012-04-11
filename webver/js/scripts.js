@@ -20,6 +20,8 @@ var soundMuted = false;
 
 //TODO: Konvertere til spritesheet
 var groundSpriteImage;
+var resourceSpriteImage;
+var buildingSpriteImage;
 
 var projectiles = [];
 
@@ -47,6 +49,12 @@ function init(){
 	groundSpriteImage = new Image();
 	groundSpriteImage.src = '../img/ground.png';
 
+	resourceSpriteImage = new Image();
+	resourceSpriteImage.src = '../img/resources.gif';
+
+	buildingSpriteImage = new Image();
+	buildingSpriteImage.src = '../img/Bygninger.gif';
+
 	splashScreen = new splash();
 	initMouseListener();
 	ssInterval = setInterval(function(){
@@ -67,6 +75,7 @@ function draw(){
 	drawProjectiles();
 	drawExplosions();
 	drawMenus();
+	resources.draw();
 }
 
 var activeMenus = [];
@@ -99,7 +108,6 @@ function startGame(){
 	projectileInterval = setInterval(function(){
 		updateProjectiles();
 	}, 10);
-	fireProjectile();
 }
 
 function toggleMute(){

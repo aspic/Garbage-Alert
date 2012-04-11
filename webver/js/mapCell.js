@@ -11,10 +11,14 @@ function MapCell(xPos, yPos, w, h, t){
 		this.type = 4;
 	} else if(t=="weapon"){
 		this.type = 3;
-		this.tileType = new Weapon(this.x, this.y, this.width, this.height);
+		var temp = new Weapon(this.x, this.y, this.width, this.height);
+		this.tileType = temp;
+		weapons.push(temp);
+
 	} else if(t == "factory"){
 		this.type = 2;
-		factories.push(new Factory(this.x, this.y, this.width, this.height));
+		this.tileType = new Factory(this.x, this.y, this.width, this.height); 
+		factories.push(this.tileType);
 		this.f = function(){
 			console.log("this is a factory");
 			factoryUpgradeMenu.toggleActive();
@@ -58,7 +62,7 @@ MapCell.prototype.draw = function() {
 		);
 		break;
 	case(2):
-		factories[0].draw();
+		this.tileType.draw();
 		break;
 	case(3):
 		this.tileType.draw();

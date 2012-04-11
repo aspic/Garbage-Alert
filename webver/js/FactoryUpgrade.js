@@ -5,15 +5,15 @@ function FactoryUpgradeMenu(){
 
 	this.x = 0;
 	this.y = 0;
-	this.w = 50;
-	this.h = 100;
+	this.w = 100;
+	this.h = 500;
 	this.f = function(){
 		alert("test");
 	}
 
 	this.buttons = [
 		new FactoryUpgradeMenuButton(), 
-		new FactoryUpgradeMenuCloseButton()
+		new FactoryUpgradeMenuCloseButton(0, this.h-50, this.w, 50)
 	];
 }
 
@@ -62,11 +62,11 @@ FactoryUpgradeMenuButton.prototype.draw = function(){
 	context.fillRect(this.x, this.y, this.w, this.h);
 }
 
-function FactoryUpgradeMenuCloseButton(){
-	this.x = 0;
-	this.y = 75;
-	this.w = 50;
-	this.h = 25;
+function FactoryUpgradeMenuCloseButton(x,y,w,h){
+	this.x = x;
+	this.y = y;
+	this.w = w;
+	this.h = h;
 	this.text = "Lukk";
 	this.f = function(){
 		factoryUpgradeMenu.toggleActive();
