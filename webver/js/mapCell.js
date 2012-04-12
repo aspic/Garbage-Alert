@@ -19,16 +19,12 @@ function MapCell(xPos, yPos, w, h, t){
 		this.type = 2;
 		this.tileType = new Factory(this.x, this.y, this.width, this.height); 
 		factories.push(this.tileType);
-		this.f = function(){
-			console.log("this is a factory");
-			factoryUpgradeMenu.toggleActive();
-		}
 	}
 }
 
 MapCell.prototype.click = function(){
-	if(this.f != undefined){
-		this.f();	
+	if(this.tileType.f != undefined){
+		this.tileType.f();
 	}
 }
 

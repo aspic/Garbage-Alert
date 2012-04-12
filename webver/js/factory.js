@@ -9,6 +9,12 @@ function Factory(xPos, yPos, width, height){
 	this.flair = [];
 	this.pid = factoryPidCounter;
 	factoryPidCounter++;
+
+	this.factoryMenu = new FactoryUpgradeMenu();
+
+	this.f = function(){
+		this.factoryMenu.toggleActive();
+	}
 }
 
 function UpgradeFactoryFlair(data){

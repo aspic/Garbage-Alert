@@ -18,6 +18,8 @@ var gameMode = false;
 
 var soundMuted = false;
 
+var skipIntro = true;
+
 //TODO: Konvertere til spritesheet
 var groundSpriteImage;
 var resourceSpriteImage;
@@ -25,6 +27,7 @@ var buildingSpriteImage;
 var deniedSpriteImage;
 
 var projectiles = [];
+var players = [];
 
 var introMusic;
 
@@ -61,9 +64,15 @@ function init(){
 
 	splashScreen = new splash();
 	initMouseListener();
-	ssInterval = setInterval(function(){
-		drawSplashScreen();
-	}, targetFps/1000);
+
+	if(!skipIntro){
+		ssInterval = setInterval(function(){
+			drawSplashScreen();
+		}, targetFps/1000);
+	}
+	else{
+		startGame();
+	}
 
 	initOld();
 }
@@ -132,12 +141,6 @@ function toggleMute(){
 
 
 function harvestResources(){
-	resources.resourceIcons.forEach(function(i){
-		if(i.isAvailable){
-			i.amount += yieldAmount;
-		}
-	});
-
 	if(resources.getResourceIcon('cardboard').isAvailable){
 		papp += yieldAmount;
 		cwrite('get papp');
