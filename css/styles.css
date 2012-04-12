@@ -1,0 +1,167 @@
+html {
+	margin: 0; padding: 0;
+}
+
+body
+{
+	margin: 0; padding: 0;
+  background: #111;
+  /*background: url(../img/pattern.png);*/
+}
+
+header{
+  text-align: center;
+}
+header h1
+{
+  margin: 0;
+}
+
+#page_wrapper
+{
+  background: #eaeaea;
+  height: 100%;
+  width: 100%;
+}
+
+#main_wrapper
+{
+  width: 800px;
+  margin: auto;
+  padding: 4em 0;
+}
+
+#disclaimer
+{
+  text-align: center;
+  color: #222;
+}
+
+#disclaimer p
+{
+  margin: 2em;
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  text-shadow: 0 1px 0 #303030;
+  font-family: PT Sans, sans-serif;
+  cursor: default;
+}
+
+
+#disclaimer ::selection
+{
+  background: lightblue;
+}
+
+
+#disclaimer a
+{
+  color: #222;
+  transition: color 0.4s;
+  text-decoration: none;
+}
+
+
+#disclaimer a:hover
+{
+  cursor: pointer;
+  text-shadow: 0 1px 0 #303030;
+  color: #2d2d2d;
+}
+
+
+
+h1, h2, h3, h4, h5, h6
+{
+  font-family: 'PT Sans', sans-serif;
+}
+
+p
+{
+  font-family: 'PT Serif', serif;
+}
+
+#console
+{
+  position:absolute;
+  bottom:0;
+  right: 2em;
+  width: 500px;
+  height: 50px;
+  background: black;
+  color: lightgreen;
+  overflow: scroll;
+  padding-left: 2em;
+}
+
+#upgradechooser {
+  position: absolute;
+  top: 3em;
+  left: 3em;
+  background: white;
+  width: 200px;
+  height: 200px;
+  visibility: hidden;
+  border: 1px solid black;
+  padding: 1em;
+}
+
+.envCapabilities span.denomination {
+  background: green;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.envCapabilities span.false {
+  background: red;
+}
+
+div.envCapabilities {
+  width: 16.666666%;
+}
+
+#defenceUpgradeCard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: white;
+  visibility: hidden;
+  border: 1px solid black;
+}
+
+#attackUpgradeCard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: white;
+  visibility: hidden;
+  border: 1px solid black;
+}
+
+#game {
+  position: relative;
+}
+
+#main_wrapper{
+  position: relative;
+  height: 600px;
+}
+
+#resources {
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 30%;
+}
+#canvas_wrapper {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 70%;
+  -o-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  -moz-user-select: none
+  user-select: none
+}
