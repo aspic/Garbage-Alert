@@ -1,5 +1,3 @@
-factoryUpgradeMenu = new FactoryUpgradeMenu();
-
 function FactoryUpgradeMenu(){
 	this.active = false;
 

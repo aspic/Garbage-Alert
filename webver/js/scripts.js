@@ -28,6 +28,7 @@ var deniedSpriteImage;
 
 var projectiles = [];
 var players = [];
+var notifications = [];
 
 var introMusic;
 
@@ -89,6 +90,7 @@ function draw(){
 	drawExplosions();
 	drawMenus();
 	resources.draw();
+	drawNotifications();
 }
 
 var activeMenus = [];
