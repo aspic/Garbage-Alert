@@ -36,8 +36,8 @@ function destroyProjectile(p){
 var explosions = [];
 function Explosion(x, y){
 	this.isActive = true;
-	this.x = x;
-	this.y = y;
+	this.x = x-32;
+	this.y = y-10;
 	this.exCounter = 0;
 	this.iCounter = 0;
 	this.jCounter = 0;
