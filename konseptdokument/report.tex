@@ -7,7 +7,7 @@
 %%% Preamble
 \documentclass[paper=a4, fontsize=12pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
 
-\usepackage[english]{babel}															% English language/hyphenation
+\usepackage[english]{babel}														% English language/hyphenation
 \usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
 \usepackage{amsmath,amsfonts,amsthm}										% Math packages
 \usepackage[pdftex]{graphicx}														% Enable pdflatex
@@ -40,6 +40,7 @@
 
 %%% Custom headers/footers (fancyhdr package)
 \usepackage{fancyhdr}
+%\usepackage{tabularx}
 \usepackage{float}
 \pagestyle{fancyplain}
 \fancyhead{}														% No page header
@@ -62,8 +63,10 @@
 \tableofcontents
 % Add the chapters
 \include{intro}
+\include{problem}
 \include{process}
 \include{concept}
+\include{spillutforming}
 \include{dynamics}
 \include{genre}
 \include{artwork}
