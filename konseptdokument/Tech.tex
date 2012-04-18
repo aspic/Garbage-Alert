@@ -1,0 +1,50 @@
+
+Garbage Alert-prototypen slik den er i dag er implementert med nye web-teknologier, også (noe unøyaktig) kjent som HTML5. Dette medfører at Garbage Alert i prinsippet kan kjøres hvor som helst der en har en moderne nettleser med støtte for JavaScript. Garbage Alert har mobiltelefoner som hovedplattform, hvor slik teknologi kjører uten problemer.
+
+
+\subsection{Systemkrav}
+Som nevnt over er Garbage Alert først og fremst ment å kunne spilles på mobiltelefoner.
+Da spillet er implementert som et web-basert spill vil det i prinsippet ikke være en begrensning på hvilket operativsystem telefonen kjører, det være Apple iOS, Google Android eller Windows Phone 7, så lenge telefonen leveres med en moderne nettleser. Nettbrett som Apple iPad og Samsung Galaxy Tab vil og kunne kjøre Garbage Alert.
+
+I tillegg til dette vil spillet kunne spilles ellers hvor der finnes nettlesere, og kontrollmetoder som fungerer. I prinsippet vil dette si
+
+
+Det store aberet her er at kontrollmetoder ikke alltid vil fungere optimalt, og må eventuelt tilpasses de ulike plattformers styrker og svakheter. Slik prototypen eksisterer i dag vil den eksempelvis fungere bra med mus og tastatur på en tradisjonell datamaskin, men ikke i det hele tatt med en håndkontroll av typen en bruker til tradisjonelle spillkonsoller.
+
+Legg dog merke til at ekstensiv testing av ulike nettlesere og enheter har ikke blitt gjort, og gruppen kan ikke gå god for at spillet kjører feilfritt over alt. Garbage Alert er hovedsaklig testet i Google Chrome (versjon 18 og over) og Opera (versjon 11.6 og over).
+
+
+\subsection{Audiovisuelt innhold}
+Garbage Alerts visuelle stil er ment å være leken og samtidig oversiktlig, og dets grafiske stil er inspirert av den klassiske spillserien \emph{Advance Wars}\cite{game:advancewars}.
+
+Spillets introskjerm er ment å være så pompøs og lite subtil som mulig, med store eksplosjoner på en søppelhaug. På denne skjermen spilles et utsnitt av sangen \emph{Hell March}, bedre kjent som tittelmusikken fra Westwoods Red Alert-serie\cite{game:redalert}. Dette for å underbygge det pompøse inntrykket vi ønsker å skape. En ferdig versjon vil inneholde lydeffekter og bakgrunnsmusikk i resten av spillet.
+
+
+
+\subsection{Programmeringsinnhold og kodestruktur}
+
+For å øke spillets modifiserbarhet og øke kodens lesbarhet er de ulike elementene i spillet delt inn i egne JavaScript-filer for å logisk samle metoder og funksjoner. I en ferdig versjon vil disse filene samles i én enkelt fil for å gjøre eksempelvis innlastingstiden bedre.
+
+Spillets bilder og figurer finnes i en egen mappe. På samme måte som med JavaScript-filene vil en i den ferdige versjonen ha salle bildene i én større bildefil for å forbedre innlastingstiden.
+
+
+\subsection{Problemer og alternativer}
+Da vi har sett oss ut berøringsbaserte mobiltelefoner som målplattform for spillet vil de naturlige alternativene være å realisere Garbage Alert som en såkalt \emph{native} applikasjon\footnote{En \emph{native} applikasjon er en skreddersydd applikasjon skrevet direkte til ett enkelt av de ulike mobiltelefonoperativsystemene.}, noe vi også til å begynne med hadde tenkt å gjøre. Dette gikk vi imidlertid bort fra da ikke alle har de verktøy som behøves for å utvikle til denne plattformen\footnote{Der behøves en Apple Mac og en utviklerlisens, noe kun ett menneske på gruppa har.} falt valget med hvert på å implementere spille med web-teknologi. Dette førte med seg at flere kunne bidra til programmeringen både i kraft av at flere har erffaring med JavaScript fra før og at alle er i besittelse av de verktøy som behøves.
+
+Spill skrevet i JavaScript vil være tregere enn spill skrevet native, men dette er noe vi har valgt å se bort fra. Dette fordi en enkel prototype vil fungere tilstrekkelig i dette prosjektet.
+
+Det som nevnt ingen garanti at spillet vil fungere i alle nettlesere overalt, og ekstensiv testing må til for å kunne sikre at det fungerer på flest mulig enheter. Igjen, grunnet at resultatet av dette prosjektet var ment å kun være en enkel prototype, er dette noe vi har sett bort fra.
+
+
+
+
+\subsection{Ressurser}
+Garbage Alert kan utvikles i hvilken som helst applikasjon som er i stand til å redigere rene tekstfiler. Kildekontroll gjøres via Git, og koden er lagret på GitHub\footnote{\url{https://github.com/aspic/Garbage-Alert}}.
+
+
+
+
+
+%-------- OM MEG --------- %
+\item[Trond Kjetil (25)] \hfill \\
+Trond Kjetil startet tidlig sin spillkarriere med Nintendo Entertainment System og Super Mario Bros. i 1990, knapt 4 år gammel. TV-spill var fra da av et fast inventar i hans fritidssysler. Senere kom maskiner som Game Boy, Nintendo 64 og PC. I dag spiller han helst førstepersonsskytere på PC, da helst Team Fortress 2 og Tribes Ascend.
