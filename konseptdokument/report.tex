@@ -6,8 +6,7 @@
 
 %%% Preamble
 \documentclass[paper=a4, fontsize=12pt]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
-
-\usepackage[english]{babel}														% English language/hyphenation
+\usepackage[norsk]{babel}														% English language/hyphenation
 \usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
 \usepackage{amsmath,amsfonts,amsthm}										% Math packages
 \usepackage[pdftex]{graphicx}														% Enable pdflatex
@@ -19,14 +18,10 @@
 \usepackage[utf8]{inputenc} % We want UTF8
 \usepackage{url}
 
-% Redefinere referansesaken
-\renewcommand{\refname}{Referanser}
-
 %%% Advanced verbatim environment
 \usepackage{verbatim}
 \usepackage{fancyvrb}
 \DefineShortVerb{\|}								% delimiter to display inline verbatim text
-
 
 %%% Custom sectioning (sectsty package)
 \usepackage{sectsty}								% Custom sectioning (see below)
@@ -39,7 +34,6 @@
 	\usefont{OT1}{bch}{b}{n}%					% bch-b-n: CharterBT-Bold font
 	\sectionrule{0pt}{0pt}{-5pt}{0.8pt}%	% Horizontal rule below section
 	}
-
 
 %%% Custom headers/footers (fancyhdr package)
 \usepackage{fancyhdr}
@@ -58,16 +52,13 @@
 \numberwithin{table}{section}																% Tablenumbering: section.tab#
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % command to make the lines in title page
 
-
 %%% Glossary stuff
-\newcommand*{\glossaryname}{Dictionary}
 \usepackage[nonumberlist]{glossaries}
 \newcommand{\dictentry}[2]{%
   \newglossaryentry{#1}{name=#1,description={#2}}%
   \glslink{#1}{}%
 }
 \makeglossaries
-
 
 %%% Begin document
 \begin{document}
