@@ -9,7 +9,7 @@ $(report) : $(tex) $(texs) $(imgs)
 	pdflatex $<
 	bibtex $(basename $<)
 	pdflatex $<
-	#makeglossaries $(basename $<)
+	makeglossaries $(basename $<)
 	pdflatex $<
 
 clean :
