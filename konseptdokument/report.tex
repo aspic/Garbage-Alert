@@ -19,6 +19,9 @@
 \usepackage[utf8]{inputenc} % We want UTF8
 \usepackage{url}
 
+% Redefinere referansesaken
+\renewcommand{\refname}{Referanser}
+
 %%% Advanced verbatim environment
 \usepackage{verbatim}
 \usepackage{fancyvrb}
@@ -55,23 +58,32 @@
 \numberwithin{table}{section}																% Tablenumbering: section.tab#
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % command to make the lines in title page
 
-%%% Begin document
 
+%%% Glossary stuff
+\newcommand*{\glossaryname}{Dictionary}
+\usepackage[nonumberlist]{glossaries}
+\newcommand{\dictentry}[2]{%
+  \newglossaryentry{#1}{name=#1,description={#2}}%
+  \glslink{#1}{}%
+}
+\makeglossaries
+
+
+%%% Begin document
 \begin{document}
 \include{title}
-\newpage
 \tableofcontents
 % Add the chapters
+\include{glossary}
 \include{intro}
 \include{problem}
 \include{process}
 \include{concept}
-
 \include{spillutforming}
-\include{dynamics}
-
+\include{tech}
 \include{genre}
 \include{artwork}
-\include{references}
+\bibliographystyle{plain}
+\bibliography{referanser}
 \include{conclusion}
 \end{document}
