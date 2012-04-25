@@ -1,8 +1,13 @@
 %!TEX root = report.tex
 \section{Konsept og spillutforming}\label{sec:konsept}
-
+Dette kapittelet forteller om konseptet som ble utviklet, definisjoner
+og begrep som ble utviklet i forbindelse med spillet og selve
+spilldynamikken. I tillegg blir de ulike spillelementene forklart.
 \subsection{Introduksjon: Garbage Alert}
-
+Garbage Alert er strategispillet der du bestemmer verdens skjebne ved å
+gjenvinne og krige med søppel. Spillet har resirkulering i sentrum
+samtidige som det skal være et underholdende strategispill for deg
+mellom 9 og 99 år. 
 			\begin{figure} [here]
 				\begin{center}
 					\includegraphics[scale=0.5]{images/splashscreen}
@@ -10,15 +15,20 @@
 			\caption{Garbage Alert splash screen}
 		\end{figure}
 
-Garbage Alert er strategispillet der du bestemmer verdens skjebne ved å gjenvinne og krige med søppel. Spillet har resirkulering i sentrum samtidige som det skal være et underholdende strategispill for deg mellom 9 og 99 år. 
 
-Man starter på en øy overfyllt med søppel. Målet med spillet er å bli kvitt søppelet. Ved å gjenvinne avfallet får man ulike muligheter til å bombandere de andre spillerne, forsvare sin egen øy, for så å stå igjen som vinneren på en øy uten søppel, eller som eneste spiller i live.
+Man starter på en øy overfyllt med søppel. Målet med spillet er å bli
+kvitt søppelet. Ved å gjenvinne avfallet får man ulike muligheter til å
+bombandere de andre spillerne, forsvare sin egen øy, for så å stå igjen
+som vinneren på en øy uten søppel, eller som eneste spiller i live.
 
-Spillet er utviklet av en gruppe studenter på NTNU i faget Eksperter i Team. Spilldesignerne går under navnet Re3. Re3 består av Andreas Røysland Aarnes, Trond Kjetil Bremnes, Christian Aleksander Lysne, Kjetil Mehl og Ina Sander Pedersen.
+Spillet er utviklet av en gruppe studenter på NTNU i faget Eksperter i
+Team. Spilldesignerne går under navnet \input{re3}. \input{re3} består av Andreas
+Røysland Aarnes, Trond Kjetil Bremnes, Christian Aleksander Lysne,
+Kjetil Mehl og Ina Sander Pedersen.
 
-Målet med denne seksjonen er å gi deg et innblikk i det utviklede spillkonseptet, hvilke spillaspekter som er tatt med og spillets dynamikk.
-
-
+Målet med denne seksjonen er å gi deg et innblikk i det utviklede
+spillkonseptet, hvilke spillaspekter som er tatt med og spillets
+dynamikk.
 \input{definisjoner}
 \input{spillelement}
 \subsection{Spilldynamikken}
@@ -37,7 +47,7 @@ intelligens. Man starter spillet med en øy og følgende elementer:
 	\item Muligheter for oppgraderinger av gjenvinningsstasjon slik at man også får gjenvinnet plast eller tre.
 \end{itemize}
 
-Jo flere typer ressurser man får gjenvinnet fra søppelet, jo flere muligheter har man for mer avanserte våpen, forsvar og oppgraderinger. (se kapittel om spillelement?)
+Jo flere typer ressurser man får gjenvunnet fra søppelet, jo flere muligheter har man for mer avanserte våpen, forsvar og oppgraderinger (se seksjon \ref{sec:spillelement}).
 
 %De sentrale spillelementene består av å samle inn søppel til resikulerings vil være samling, %ressursforvaltning, valg av våpen og forsvar, samt timing av våpenbruk. Spillinnholdet vil hovedsaklig være Pure Play (Usikker på dette innebærer det jeg tror), der målet er å få spilleren til å ha det gøy, men det vil også være elementer av realisme da det spilleren foretar seg vil virke inn på både lokalt og globalt miljø. Det vil være en lineær spillsekvens (Er usikker på denne fordi jeg ikke finner noen  spillsekvenstype som passer??) der spilleren får tilgang til nye våpentyper og forsvarsmuligheter etterhvert som krav for hver enkelt oppgradering er nådd. For at spillet skal få et lekent og fristende utseende har vi valgt en type tegneseriestil som vil gjøre nettopp dette. (Husker ikke om vi har vi diskutert dette, og hva vi kom fram til?)\\
 
@@ -93,6 +103,124 @@ Det er ingen taktikk som er best. Det er mange tilfeldigheter som kan snu spille
 
 Adrenalinet av å bombe de andre spillerne og å selv bli knust; raske avgjørelser for å kjapt hente seg inn eller ta nådestøtet for å ta seieren; valg av taktikker som kan overraske de andre spillerne; plutselige katastrofer som kan snu spillet mot alle retninger. Denne spenningen er noe av det som gjør Garbage Alert til et kjekt spill som til og med får din bestemor til å trekke på smilebåndet.
 
-\input{spillmatrise}
-\input{spillerpremier}
-\input{ui}
+% This is a spreadsheet containing the generic names of the player and
+% antagonistic elements and their game properties. 
+
+% This should allow an easy cross reference for an elements in the game
+% that a value. 
+\subsection{Spillmatrisen}
+Spillmatrisen (se Figur~\ref{fig:spillmatrise}) er en grafisk forklaring
+på hvilke elementer i spillet som interagerer med hverandre. Elementer
+som våpen, forsvar og oppgraderinger er kun beskrevet på et overordnet
+nivå, siden disse elementene deler like egenskaper (f.eks. at alle
+angrep kan angripe forsvar).
+\begin{center}
+\begin{figure} [H]
+\includegraphics[scale=0.6]{images/spillmatrise.png}
+\caption{Spillmatrise med de forskjellige elementene}
+\label{fig:spillmatrise}
+\end{figure}
+\end{center}
+I Figur~\ref{fig:spillmatrise} er elementene som interagerer er merket
+med en \textbf{X} i den kollonnen og raden de elementene sammenfaller i.
+Hvordan elementene interagerer er beskrevet nedenfor:
+\begin{description}
+\item \textbf{Spilleren}\\Spilleren sin oppgave er å samle søppel,
+bygge våpen og forsvar, samt oppgradere miljøstasjonen.
+\item \textbf{Miljøstasjonen}\\Miljøstasjonen tar imot og gjenvinner
+søppelet. I tillegg er dette hovedbasen for spilleren, og står for alle
+oppgraderingene. En miljøstasjon kan bli angrepet av andre spillere, og
+interagerer derfor med våpen.
+\item \textbf{Søppel}\\Blir plukket opp av spilleren, og lagt på
+miljøstasjonen for gjenvinning.
+\item \textbf{Angrep}\\Spillere kan angripe andre spillere sitt forsvar,
+og miljøstasjonene deres.
+\item \textbf{Forsvar}\\Forsvaret kan bli angrepet og ødelagt av våpen.
+En spiller bygger forsvaret, derfor koblingen mellom spiller og forsvar.
+\item \textbf{Oppgraderinger}\\Spilleren kan oppgradere miljøstasjonen
+sin. Desse oppgraderingene baserer seg på statusen til miljøstasjonen.
+\end{description}
+% Make a list of all objects that affect the player in a positive way.
+% (i.e. health replenished)
+
+% Define these objects by describing what affect they cause and how the
+% player can use the object.
+\subsection{Spillkonsekvenser}
+Dette delkapittelet forteller om de forskjellige negative og positive
+konsekvensene en spiller kan og vil oppleve gjennom spillets gang.
+
+Gjennom å oppgradere miljøstasjonen vil en kunne visuelt se at øya blir
+renere, atmosfæren blir klarere og bakgrunnsmusikken blir penere.
+Lystige lydeffekter signaliserer at en gjør noe som gir spilleren en
+fordel i forhold til motspillerne, for eksempel når spilleren
+oppgraderer utstyr eller utfører et vellykket angrep mot sine
+motstandere. Dette skal skaper en positiv følelse av mestring hos
+spilleren. 
+
+Videre er der en intrisitt verdi i å vinne et spill over ens
+medspillere.
+
+For å kunne underbygge spillets underliggende tematikk om
+miljøvennlighet vil naturen straffe spillerne som ikke tenker miljø.
+Geologiske og biologiske katastrofer er konsekvensene som rammer en
+eller alle spillerne.
+
+På samme måte som at muntre lydeffekter underbygger gode handlinger
+gjort av spilleren, vil dystre lydeffekter signalisere negative
+hendelser. Dette kan for eksempel være i det en blir angrepet av
+motspillerne. 
+
+Når man vinner eller taper et spill vil dette føres opp på spillerens
+profil. Med dette kan hver spiller ha kontroll over sin egen
+spillstatistikk. På spillerens profil finnes det også et profilbilde av
+en kriger. Bildet vil også være synlig for de spillerne man spiller mot
+under et spill. Man begynner med et default profilbilde, og etterhvert
+som man vinner mange spill får man muligheten til å endre dette bilde.
+Målet med dette er å gi spilleren en visuell prestasjonspremie, i
+tillegg får de spillerne man spiller mot en idè om hvor mye motspilleren
+har spilt spillet tidligere.
+% This is where a description of the user’s control of the game can be
+%placed.
+
+% It is also recommended to think about which buttons on a device would
+% be best suited for the game.
+
+% Consider what the worst layout is, then ask you self if your UI is it
+% still playable?
+
+% A visual representation can be added, where we relate the physical
+% controls to the actions in the game.
+
+
+% TODO
+% * Skrive om de svakeste elementene i grensesnittet
+% * Referere til screenshots
+% * Inkludere noe tekst om lydbildet?
+% * Generell formattering, sammenslåing og sortering av avsnitt
+
+\subsection{Brukergrensesnitt}
+
+Brukergrensessnittet i spillet er i prototypen noe infantilt og uferdig.
+
+
+Vi har bevisst valgt å holde språket i spillet norsk, og overalt hvor en finner tekst i spillet vil den være på norsk. % bah, møkkasetning.
+
+
+Det en først ser når en starter spillet er en introskjerm som med sin grafikk og lydbilde er ment å sette spilleren i et kompetetivt sinnelag.
+
+Fra denne skjermen er det mulig å starte spillet ved å trykke den store knappen markert "Start".
+En mer ferdig versjon vil andre valg fra denne skjermen være å stille inn ting som spillernavn, samt mulighet for å koble flere spillere sammen i et flerspillerspill.
+
+
+Spillets hovedskjerm % Forklare litt bedre hva vi mener med hovedskjerm
+består av et overblikksbilde av alle øyer som er med i spillet. I prototypen er antallet begrenset til to, men en mer moden versjon vil inneholde muligheten til å spille flere enn to stykker samtidig. En skiller mellom en selv og andre ved bruk av ulike farger på spillernes miljøstasjon, våpen og forsvar. I prototypen har vi valgt å fargelegge de to faksjonene rød og blå.
+
+I prototypen er denne skjermen et statisk fugleperspektiv av alle øyene og alle spillets elementer. En ferdig versjon vil og inneholde muligheten til å veksle mellom et detaljbilde av ens egen øy og overblikksbildet over alle øyer. Hvorvidt dette vil gjøres via en knapp som veksler mellom de to visningsmodi eller om en vil "klype for å zoome" er på dette stadiet uvisst og bør testes via brukertesting for å finne den optimale metoden.
+
+
+Garbage Alert er tenkt å først og fremst spilles på mobiltelefoner og andre enheter med berøringsskjerm. En interagerer derfor med elementene på skjermen ved å trykke på de. Det en må være spesielt oppmerksom på med slike skjermer er å holde knapper store nok, samt at aller elementer på skjermen må være forskjellige nok til at det er enkelt å skille de fra hverandre på små skjermer.
+
+Spillet kan og spilles på en datamaskin i en nettleser, og en kan derfor også bruke en musepeker for å trykke på elementene på samme måte.
+
+
+Merk at da vi under utviklingen kun har testet prototypen på en dataskjerm er ikke spillet per nå tilpasset mobiltelefoner i så stor grad som det burde være. Enkle tester på mobiltelefon har dog blitt gjort, men har vært nedprioritert grunnet tidspress.
