@@ -49,7 +49,7 @@ Det er også mulig å skade forsvar/våpen som er bygget av en bedre ressurs enn
 \subsubsection{Ressursutvinning}
 En spiller skaffer seg ressurser ved å gjenvinne søppel som ligger
 spredt rundt på øya. Dette blir gjort ved hjelp av miljøstasjonen
-som hver spiller starter med.
+som hver spiller starter med. For å flytte søppelet til miljøstasjonen må spilleren dra fingeren over skjermen fra søppelet til miljøstasjonen.
 \subsubsection{Miljøstasjon} \label{miljostasjon}
 Miljøstasjonen er det mest sentrale spillelementet i Garbage
 Alert. Denne kan bli sett på som hovedbasen i spillet.
@@ -78,37 +78,23 @@ Nivå 3 & 30 & 20 & 15sek & Papp, plast, tre, stål, jern og titan \\
 \end{table}
 
 
-
-
 \subsubsection{Forsvar}
-Spillere kan bygge forsvar rundt øya si. Dette forsvaret vil forhindre
-motspillere å angripe gjenvinningsstasjonen. Det vil finnes ulike typer
-forsvarsmurer, som er kraftige/svake mot ulike typer angrep.
+Spillere kan bygge forsvar rundt øya si. Dette forsvaret vil forhindre at
+motspillere skader miljøstasjonen. Det finnes ulike typer
+forsvarsmurer, som er tilgjengelige i tråd med hvilke ressursoppgraderinger man har. 
 \subsubsection{Angrep}
-En spiller får utdelt tre angrepsplattformer. På desse tre platformene
+En spiller får utdelt tre angrepsplattformer. På disse tre plattformene
 kan spilleren velge hvilke angrep han vil utvikle, basert på hvilke
-tilgjengelige ressurser han har.
-\subsubsection{Oppgraderinger}
-Spilleren har mulighet til å oppgradere både gjenvinningsstasjonen,
-våpen og forsvar. Hver type våpen og forsvar har tre nivå, der øking i
-nivå vil gi hhv. kraftigere angrep og sterkere forsvar. De tre
-våpenplassene på øya kan ha inneholde ulike våpen som kan oppgraderes
-hver for seg.
-Eksempel på forsvarsoppgradering:\\
-Tremur (nivå 1) -> Tremur (nivå 2) -> Tremur (nivå 3).
-\begin{quote}
-Bør restruktureres!!\\
-Spilleren kan utvinne ressurser ved å "dra" søppelenheter fra
-forskjellige plasser på øya inn til gjennvinningsstasjonen. Hvilke
-ressurser, og mengden av hver ressurs, som spilleren får ut fra en
-enkelt søppelenhet er avhengig av nivået på gjennvinningsstasjonen og
-hvilke typer oppgraderinger som er gjort. Spilleren kan også bruke sine
-våpen til å bli kvitt søppelenheter. Her vil ubehandlede søppelenheter
-kunne skytes på motstandere. Effekten av angrepet avhenger av spillerens
-våpen, oppgraderingsnivå på våpenet og motstanderens forsvar. For å
-beskytte seg mot angrep kan spilleren bygge mur rundt sin øy. Hvilke
-våpen og forsvarsmurer som spilleren kan bygge er avhengig av hvilke
-ressurser gjenvinningsstasjonen er i stand til å utvinne. Dette betyr at
-valg av typer oppgradering for gjenvinningsstasjonen vil være avgjørende
-for utviklingen av spillet.\\
-\end{quote}
+tilgjengelige ressurser han har. Når en spiller bygger et våpen kan dette avfyres et bestemt antall ganger med en buffertid imellom skuddene. Erfaringer fra alfa-testing av spillet viste at tre skudd med en buffertid på 30 sekund var passende, men dette er ikke fastsatt. Når våpenets ammunisjon er brukt opp må man kjøpe et nytt våpen for å fortsette sine angrep. 
+I tillegg til å avfyre skudd må spilleren sørge for at det er søppel på angrepsplattformen, ettersom målet med et angrep ikke bare er å skade motspillerenes bygninger, men også bli kvitt søppel. Hvis den forsvarende motspilleren ikke har mur, eller muren blir ødelagt i angrepet vil det avfyrte søppelet landet på motspillerens øy. \\
+Rekkefølgen for hva som blir skadet under ett angrep er: forsvar, angrep, miljøstasjon. Det vil si at dersom man ikke har mur, eller muren blir ødelagt under angrepet, vil våpenene til spilleren ta skade. Dersom spilleren verken har mur eller våpen vil miljøstasjonen ta skade under et angrep. 
+\subsubsection{Oppgraderinger av forsvar og angrep}
+En spiller som har en type mur, kan oppgradere muren til en bedre mur. En slik oppgradering er billigere enn å bygge en ny mur. Idèen bak dette er at materialene den gamle muren består av blir brukt til å bygge den nye muren, i tillegg til ekstra materialer som kreves i henhold til oppgraderingen. Tilsvarende kan gjøres for våpen.
+\subsubsection{Reparasjoner}
+Både mur, våpen og miljøstasjon kan repareres. Prisen på en reparasjon tar et prosentvis utgangspunkt i prisen på en ny bygning. I tillegg antas det at 50\% av den ødelagte delen av bygningen kan gjenbrukes. Eksempelvis så kan en mur som har mistet halvparten av hitpointsene sine repareres for 25\% av prisen på en ny mur (halvparten av de ødelagte materialene kan brukes igjen, dermed må spilleren kun betale for den resterende fjerdedelen av muren).
+\subsubsection{Priser, hitpoints og attack-verdier}
+Under utviklingen og alfa-testingen av spillet har Re3 kommet frem til en prisliste, hitpoints på våpen, mur og miljøstasjon samt attack-verdier for våpnene.\\
+
+Prislisten er utviklet slik at det hele tiden er knapt med ressurser. Det vil si at nesten alle bygninger og oppgraderinger koster noe papp, osv, for at denne ressursen ikke hoper seg opp. Utkastet av prislisten finnes i appendiks 1 (ref !!)
+
+Idèen bak hitpoints og attack-verdiene er at to angrep av et type våpen ødelegger en mur bygget av samme ressurs som våpenet. Det vil si at to angrep fra en katapult ødelegger en tremur. Et våpen som er et nivå høyere enn forsvaret vil ødelegge 90\% av muren. Dersom angrepet er to nivå (eller mer) høyere enn forsvaret vil muren bli ødelagt i tillegg til at våpen/miljøstasjon vil ta skade. Et komplett utkast over hitpoints og attack-verdier finnes i appendiks 2 (ref!!)
