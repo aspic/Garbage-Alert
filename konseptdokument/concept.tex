@@ -1,3 +1,4 @@
+%!TEX root = report.tex
 \section{Konsept og spillutforming}\label{sec:konsept}
 
 \subsection{Introduksjon: Garbage Alert}
@@ -15,8 +16,7 @@ Man starter på en øy overfyllt med søppel. Målet med spillet er å bli kvitt
 
 Spillet er utviklet av en gruppe studenter på NTNU i faget Eksperter i Team. Spilldesignerne går under navnet Re3. Re3 består av Andreas Røysland Aarnes, Trond Kjetil Bremnes, Christian Aleksander Lysne, Kjetil Mehl og Ina Sander Pedersen.
 
-Målet med dette avsnittet er å gi deg et innblikk i det utviklede spillkonseptet,
-hvilke spillaspekter som er tatt med og spilldynamikken.
+Målet med denne seksjonen er å gi deg et innblikk i det utviklede spillkonseptet, hvilke spillaspekter som er tatt med og spillets dynamikk.
 
 
 \input{definisjoner}
@@ -26,7 +26,7 @@ Garbage Alert er i utgangspunktet et flerspiller sanntidsstrategispill,
 men det er også mulighet for å spille alene mot spillere med kunstig
 intelligens. Man starter spillet med en øy og følgende elementer:
 \begin{itemize}
-	\item Et resirkuleringssenter
+	\item Et miljøstasjon
 	\item En våpenstasjon
 	\item En forsvarssone
 	\item 10 enheter med papp i inventaret
@@ -37,13 +37,14 @@ intelligens. Man starter spillet med en øy og følgende elementer:
 	\item Muligheter for oppgraderinger av gjenvinningsstasjon slik at man også får gjenvinnet plast eller tre.
 \end{itemize}
 
-Jo flere typer ressurser man får gjenvinnet fra søppelet, jo flere muligheter har man for mer avanserte våpen, forsvar og oppgraderinger. Man starter med å kun gjenvinne papp. Figur XX viser mulighetene man har for å oppgradere resirkuleringssenteret slik at man får muligheten til å gjenvinne andre ressurser. For eksempel hvis man skal oppgradere til stål, må man først oppgradere til plast. For å oppgradere til titan kreves det at alle andre oppgraderinger allerede er utført. \\
+Jo flere typer ressurser man får gjenvinnet fra søppelet, jo flere muligheter har man for mer avanserte våpen, forsvar og oppgraderinger. Spilleren starter med å kun kunne gjenvinne papp. Figur \ref{fig:ressursoppgraderinger} viser mulighetene man har for å oppgradere resirkuleringssenteret slik at man får muligheten til å gjenvinne andre ressurser. For eksempel hvis man skal oppgradere til stål, må man først oppgradere til plast. For å oppgradere til titan kreves det at alle andre oppgraderinger allerede er utført. \\
 
 	\begin{figure} [H]
 				\begin{center}
 					\includegraphics[scale=0.5]{images/oppgraderingstre}
 				\end{center}
 			\caption{Ressursoppgraderinger}
+			\label{fig:ressursoppgraderinger}
 	\end{figure}
 		
 I tillegg til disse oppgraderingene har man også muligheten til å oppgradere gjenvinningseffektiviteten. Man har da følgende muligheter: \\
@@ -58,16 +59,17 @@ I tillegg til disse oppgraderingene har man også muligheten til å oppgradere g
 
 %tabellen virker ikke av en eller annen grunn.....må få det til å funke, bilde
 %brukt i stedet, men det er litt feil...
-%\begin{tabularx}{300pt}{| l | l | l | l | l |}
-%\hline
-%\bf{Effektivitet} & \bf{Resirkuleringsgrad} & \bf{Ant. søppelenheter} & \bf{Tid} & %\bf{Ressurskrav} \\
-%\hline
-%Nivå 0 & 10 & 10 & 15sek & Ingen  \\
-%Nivå 1 & 20 & 10 & 15sek & Papp \\
-%Nivå 2 & 30 & 10 & 15sek & Papp, og plast eller tre \\
-%Nivå 3 & 30 & 20 & 15sek & Papp, plast, tre, stål, jern og titan \\
-%\hline
-%\end{tabularx}
+
+\begin{tabular}[\textwidth]{ l  l  p{3cm}  l  p{4cm} }
+\hline
+\bf{Effektivitet} & \bf{Resirkuleringsgrad} & \bf{Antall søppelenheter} & \bf{Tid} & \bf{Ressurskrav} \\
+\hline
+Nivå 0 & 10 & 10 & 15sek & Ingen  \\
+Nivå 1 & 20 & 10 & 15sek & Papp \\
+Nivå 2 & 30 & 10 & 15sek & Papp, og plast eller tre \\
+Nivå 3 & 30 & 20 & 15sek & Papp, plast, tre, stål, jern og titan \\
+\hline
+\end{tabular}
 
 %De sentrale spillelementene består av å samle inn søppel til resikulerings vil være samling, %ressursforvaltning, valg av våpen og forsvar, samt timing av våpenbruk. Spillinnholdet vil hovedsaklig være Pure Play (Usikker på dette innebærer det jeg tror), der målet er å få spilleren til å ha det gøy, men det vil også være elementer av realisme da det spilleren foretar seg vil virke inn på både lokalt og globalt miljø. Det vil være en lineær spillsekvens (Er usikker på denne fordi jeg ikke finner noen  spillsekvenstype som passer??) der spilleren får tilgang til nye våpentyper og forsvarsmuligheter etterhvert som krav for hver enkelt oppgradering er nådd. For at spillet skal få et lekent og fristende utseende har vi valgt en type tegneseriestil som vil gjøre nettopp dette. (Husker ikke om vi har vi diskutert dette, og hva vi kom fram til?)\\
 
@@ -79,13 +81,13 @@ I den virkerlige verden har søppel innvirkning på det lokale og globale miljø
 
 Hver spiller vil ha to måleinstrument på panelet sitt på skjermen som viser sannsynligheten for at en geologisk eller en biologisk katastrofe kan intreffe, såkalte geohazards og biohazards.
 
-\subsubsection{Geohazarder}
+\subsubsection{Geohasarder}
 Geologiske katastrofer kan intreffe som et resultat av global oppvarmning og mekanisk påvirkning fra mennesker.
-En global geologisk katastrofe som kan intreffe er tsunami. Tsunamien vil gjøre skade på den eventuelle muren spilleren har og muligens også ødelegge våpen og miljøstasjon utover dette.
-Lokale geologiske katastrofer er jordskjelv og kolliderende isfjell. Jordskjelv gjør en liten skade på alle bygninger på øyen. Isfjellet vil kollidere i muren og gjøre en viss skade på den og muligens ødelegge den avhengig av hvor bra mur spilleren har. 
+Et eksempel på en global geologisk katastrofe som kan intreffe er tsunamier. En tsunami vil gjøre skade på den eventuelle muren spilleren har og muligens også ødelegge våpen og miljøstasjon utover dette. Hvovidt dette skjer vil bero på murens styrke og resterende helsepoeng.
+Eksempler på lokale geologiske katastrofer er jordskjelv og kolliderende isfjell. Jordskjelv gjør en liten skade på alle bygninger på øyen. Isfjellet vil kollidere i muren og gjøre en viss skade på den og muligens ødelegge den avhengig av murens styrke. 
 
 
-\subsubsection{Biohazarder}
+\subsubsection{Biohasarder}
 Et resultat av mye forsøpling av hav og øyer kan være biologiske katastrofer, der et eksempel som vil ramme alle øyene er sur nedbør. Dette vil gi korrosjon av våpen og forsvarsmurer laget av metall og dermed skade disse, samt at planter og trær også vil ta skade og gi øya et trist utseende.
 I tillegg kan lokale biologiske katastrofer inntreffe, der det vil bryte ut sykdommer pga bakterievekst som gjør at utvinning av ressurser på miljøstasjonen og muligheten for våpenangrep stanser opp for en periode.
 
@@ -105,11 +107,13 @@ Når en øy er helt overfylt med søppel vil den synke ned i havet. Dette gjør 
  og de resterende spillerne vil bli utsatt for en global katastrofe.
 
 
-\subsection{Game Play og taktikker}
+\subsection{Gameplay og taktikker}
 
 I dette avsnittet tar vi for oss et eksempel med tre deltakere som alle bruker forskjellige taktikker. De forskjellige taktikkene er basert på alfa-testing utført av Re3. Hver taktikk vil få en kort beskrivelse hvor fordeler og ulemper vil bli nevnt. Antall ressurser og hitpoints vil ikke gis i detalj.
 
-Spillet starter og hver spiller ser på en mørk øy fyllt av søppel. Det er en dyster og melankolsk stemning, og man får en følelse av at man har reist fram i tid til et post-apokalyptisk samfunn. 
+Spillet starter og hver spiller ser på en mørk øy fylt til randen av søppel. Det er en dyster og melankolsk stemning, og man får en følelse av at man har reist fram i tid til et post-apokalyptisk samfunn.
+
+For å illustrere spillets gang vil vi gå gjennom et eksempelspill spilt av tre spillere med ulike taktikker: \emph{Professor}; \emph{MadMax}; og \emph{N00b87}.
 
 Spilleren med navnet Professor har valgt å kun fokusere på oppgraderinger knyttet til effektivitet for å raskt bli kvitt søppelet sitt gjennom gjenvinning på miljøstasjonen. Denne taktikken kan raskt avslutte spillet, men risikoen er meget høy. Dersom Professor blir angrepet må han endre taktikk raskt. Forhåpentligvis kommer ikke angrepene med en gang, og han vil raskt ha flere ressurser enn de andre spillerne. Etterhvert som spillet går bør Professor bygge en mur, for å unngå at et enkelt angrep med et høyt utviklet våpen tar miljøstasjonen hans på ett skudd. Hvis han klarer å komme seg til effektivitets nivå 3 før han blir angrepet, blir han veldig raskt kvitt søppelet sitt, ettersom denne oppgraderingen dobler gjenvinningsraten. 
 
