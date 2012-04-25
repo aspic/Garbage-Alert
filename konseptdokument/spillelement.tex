@@ -6,6 +6,9 @@
 
 % Describe the terminology that you use to describe the player’s
 % properties.
+
+%bruk ord: MILJØSTASJON, GJENVINNING. (ikke gjenvinningstasjon, utvinne, resirkulering)
+
 \subsection{Elementer}
 Dette avsnittet forteller om de forskjellige spillelementene som finnes
 i Garbage Alert.
@@ -33,7 +36,7 @@ alle utvinningsutvidelsene til hovedbasen.
 \end{description}
 
 
-Det er også mulig å skade forsvar/våpen som er bygget av en bedre ressurs enn våpenet. Dette er implementert slik at ingen våpen/forsvar blir uovervinnelige. Figur \ref{fig:ressursoppgraderinger} framstiller hvilke utvidelser man må ha for å kunne oppgradere til neste nivå. Allerede helt fra starten av spillet må man velge om man først vil oppgradere til tre, eller til plast.
+Det er også mulig å skade forsvar/våpen som er bygget av en bedre ressurs enn våpenet. Dette er implementert slik at ingen våpen/forsvar blir uovervinnelige. Figur \ref{fig:ressursoppgraderinger} framstiller hvilke utvidelser man må ha for å kunne oppgradere til neste nivå. Allerede helt fra starten av spillet må man velge om man først vil oppgradere til tre, eller til plast (se seksjon \ref{miljostasjon}). 
 
 	\begin{figure} [H]
 				\begin{center}
@@ -45,31 +48,35 @@ Det er også mulig å skade forsvar/våpen som er bygget av en bedre ressurs enn
 
 \subsubsection{Ressursutvinning}
 En spiller skaffer seg ressurser ved å gjenvinne søppel som ligger
-spredt rundt på øya. Dette blir gjort ved hjelp av gjenvinningsstajonen
+spredt rundt på øya. Dette blir gjort ved hjelp av miljøstasjonen
 som hver spiller starter med.
-\subsubsection{Gjenvinningsstasjonen}
-Gjenvinningstasjonen er det mest sentrale spillelementet i Garbage
+\subsubsection{Miljøstasjon} \label{miljostasjon}
+Miljøstasjonen er det mest sentrale spillelementet i Garbage
 Alert. Denne kan bli sett på som hovedbasen i spillet.
-Gjenvinngsstasjonen kan oppgraderes på tre måter for å forbedre effektiviteten:\\
+Miljøstasjonen kan oppgraderes på tre måter for å forbedre effektiviteten:\\
 \begin{description}
-	\item \textbf{Effektivitet}\\Hvor fort den prosesseserer en enhet søppel (dette starter seint og går raskere for hver oppgradering).
-	\item \textbf{Volum/Utvinningsgrad}\\Hvor mye av søppelet som faktisk blir gjennvunnet. “Restavfallet” vil på magisk vis bli borte. Figur \ref{fig:effektivitet} under viser de mulige oppgraderingene for effektivitet og volum/utvinningsgrad. For å oppgradere til nivå 2 må man tidligere ha oppgradert til nivå 1.
-	\item \textbf{Buffer}\\Stasjonen kan få en buffer hvor spilleren kan samle opp søppel, som automatiserer gjenvinningsprosessen til en viss grad.
-	\item \textbf{Ressurser}\\For å kunne utvinne nye typer ressurser må
+	\item \textbf{Volum/Utvinningsgrad}\\Denne oppgraderingen kan øke utvinningsgraden og volumet av søppel som blir brukt i gjennvinningsprosessen. Restavfallet (søppelet som ikke blir gjenvunnet) vil på magisk vis bli borte. Tabell \ref{tab:effektivitet} viser oppgraderingene for Volum/Utvinningsgrad. Man starter på nivå 0, og deretter kan man oppgradere ett trinn ad gangen.
+	\item \textbf{Buffer}\\Miljøstasjonen kan få en buffer hvor spilleren kan samle opp søppel, som automatiserer gjenvinningsprosessen til en viss grad. Dermed kan spilleren bruke mindre tid på å sørge for at søppelet på øyen blir flyttet til miljøstasjonen.
+	\item \textbf{Ressurser}\\For å kunne gjenvinne nye typer ressurser må
 		spilleren oppgradere gjenvinningsstasjonen. Her får spilleren valget
-		mellom to ulike veier som vil avgjøre hvilke ressurser spillern får
-		tilgang til.
+		mellom to ulike veier som vil avgjøre hvilke ressurser spilleren får
+		tilgang til (se figur \ref{fig:ressursoppgraderinger}).
 \end{description}
 
+\begin{table} \label{tab:effektivitet}
+\begin{tabular}[\textwidth]{ l  l  p{3cm}  l  p{4cm} } %\label{tab:effektivitet}
+\hline
+\bf{Effektivitet} & \bf{Utvinningsgrad} & \bf{Volum} & \bf{Tid} & \bf{Ressurskrav} \\
+\hline
+Nivå 0 & 10 & 10 & 15sek & Ingen  \\
+Nivå 1 & 20 & 10 & 15sek & Papp \\
+Nivå 2 & 30 & 10 & 15sek & Papp, og plast eller tre \\
+Nivå 3 & 30 & 20 & 15sek & Papp, plast, tre, stål, jern og titan \\
+\hline
+\end{tabular}
+\caption{Oppgraderinger for Volum/Utvinningsgrad}
+\end{table}
 
-
-		\begin{figure} [H]
-				\begin{center}
-					\includegraphics[scale=0.5]{images/effektivitet}
-				\end{center}
-			\caption{De ulike oppgraderingingene for effektivitet. Ved 10\% resirkuleringsgrad og 10 søppelenheter for man 1 enhet med ressurser per ressursoppgradering man har}
-			\label{fig:effektivitet}
-		\end{figure}
 
 
 
