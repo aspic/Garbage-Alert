@@ -33,7 +33,15 @@ alle utvinningsutvidelsene til hovedbasen.
 \end{description}
 
 
-Det er også mulig å skade forsvar/våpen som er bygget av en bedre ressurs enn våpenet. Dette er implementert slik at ingen våpen/forsvar blir uovervinnelige.
+Det er også mulig å skade forsvar/våpen som er bygget av en bedre ressurs enn våpenet. Dette er implementert slik at ingen våpen/forsvar blir uovervinnelige. Figur \ref{fig:ressursoppgraderinger} framstiller hvilke utvidelser man må ha for å kunne oppgradere til neste nivå. Allerede helt fra starten av spillet må man velge om man først vil oppgradere til tre, eller til plast.
+
+	\begin{figure} [H]
+				\begin{center}
+					\includegraphics[scale=0.5]{images/oppgraderingstre}
+				\end{center}
+			\caption{Ressursoppgraderinger}
+			\label{fig:ressursoppgraderinger}
+	\end{figure}
 
 \subsubsection{Ressursutvinning}
 En spiller skaffer seg ressurser ved å gjenvinne søppel som ligger
@@ -42,16 +50,29 @@ som hver spiller starter med.
 \subsubsection{Gjenvinningsstasjonen}
 Gjenvinningstasjonen er det mest sentrale spillelementet i Garbage
 Alert. Denne kan bli sett på som hovedbasen i spillet.
-Gjenvinngsstasjonen kan oppgraderes på følgende områder:\\
+Gjenvinngsstasjonen kan oppgraderes på tre måter for å forbedre effektiviteten:\\
 \begin{description}
 	\item \textbf{Effektivitet}\\Hvor fort den prosesseserer en enhet søppel (dette starter seint og går raskere for hver oppgradering).
-	\item \textbf{Volum/Utvinningsgrad}\\Hvor mye av søppelet som faktisk blir gjennvunnet. “Restavfallet” vil på magisk vis bli borte.
+	\item \textbf{Volum/Utvinningsgrad}\\Hvor mye av søppelet som faktisk blir gjennvunnet. “Restavfallet” vil på magisk vis bli borte. Figur \ref{fig:effektivitet} under viser de mulige oppgraderingene for effektivitet og volum/utvinningsgrad. For å oppgradere til nivå 2 må man tidligere ha oppgradert til nivå 1.
 	\item \textbf{Buffer}\\Stasjonen kan få en buffer hvor spilleren kan samle opp søppel, som automatiserer gjenvinningsprosessen til en viss grad.
 	\item \textbf{Ressurser}\\For å kunne utvinne nye typer ressurser må
 		spilleren oppgradere gjenvinningsstasjonen. Her får spilleren valget
 		mellom to ulike veier som vil avgjøre hvilke ressurser spillern får
 		tilgang til.
 \end{description}
+
+
+
+		\begin{figure} [H]
+				\begin{center}
+					\includegraphics[scale=0.5]{images/effektivitet}
+				\end{center}
+			\caption{De ulike oppgraderingingene for effektivitet. Ved 10\% resirkuleringsgrad og 10 søppelenheter for man 1 enhet med ressurser per ressursoppgradering man har}
+			\label{fig:effektivitet}
+		\end{figure}
+
+
+
 \subsubsection{Forsvar}
 Spillere kan bygge forsvar rundt øya si. Dette forsvaret vil forhindre
 motspillere å angripe gjenvinningsstasjonen. Det vil finnes ulike typer
