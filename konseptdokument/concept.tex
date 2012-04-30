@@ -34,7 +34,7 @@ dynamikk.
 
 %Før vi endte opp med sanntidsstrategisjangeren vurderte vi imidlertid en rekke andre mulige sjangre for realiseringen av konseptet. Spesielt eventyr- og rollespillsjangeren ble sterkt vurdert.
 
-Under vil vi beskrive en rekke sjangre som ble vurdert for realiseringen av \emph{Garbage Alert}. Legg dog merke til at navnet ble til en tid etter at sjangeren var valgt.
+Under vil det bli beskrivet en rekke sjangre som ble vurdert for realiseringen av \emph{Garbage Alert}. Legg dog merke til at navnet ble til en tid etter at sjangeren var valgt.
 
 \subsubsection{Eventyr}
 Den første sjangeren som ble vurdert som utgangspunkt for realisering av
@@ -69,7 +69,7 @@ Der finnes en hel rekke undersjangre under eventyrsjangeren. Av spesiell interes
 
 
 \subsubsection{Strategi}
-Den andre sjangeren som ble vurdert for å realisere ideen om et resirkulering- og gjenbruksspill var strategisjangeren. Sentralt i denne sjangeren er ressursforvaltning, noe vi og følte kunne brukes for å realisere et godt konsept.
+Den andre sjangeren som ble vurdert for å realisere ideen om et resirkulering- og gjenbruksspill var strategisjangeren. Sentralt i denne sjangeren er ressursforvaltning, noe som også kunne brukes for å realisere et godt konsept.
 
 \begin{description}
 
@@ -79,7 +79,7 @@ Den andre sjangeren som ble vurdert for å realisere ideen om et resirkulering- 
 
 	Den observante leser vil kunne legge merke til at dette ikke er ulikt tradisjonelle brettspill, noe som tilkjennegis ved at mange av de første digitale strategispill var konverteringer av tradisjonelle brettspill.
 
-	Av populære turbaserte strategispill finner vi \emph{Firaxis'} \emph{Sid Meier's Civilization} og \emph{Intelligent Systems'} \emph{Advance Wars}. % TODO: Kilder?
+	Av populære turbaserte strategispill finnes \emph{Firaxis'} \emph{Sid Meier's Civilization} og \emph{Intelligent Systems'} \emph{Advance Wars}. % TODO: Kilder?
 
 
 	\item[Sanntidsstrategi] \hfill \\
@@ -88,12 +88,12 @@ I motsetning til turbaserte strategispill vil ikke hver spiller ha sin egen tur 
 
 Blant de mer sentrale elementer ved sanntidsstrategispill er konseptene om ressurshåndtering. De fleste spill i denne sjangeren lar det være opp til brukeren å passe på at man til enhver tid har adekvate ressurser til å gjøre den en ønsker og å benytte seg av de rasjonelt. Et annet element som ofte er til stede er stein-saks-papir-balansering av enheter, hvor enhet A kontrer enhet B, B kontrer enhet C og enhet C kontrer enhet A.
 
-	Av populære sanntidsstrategispill finner vi \emph{StarCraft} og \emph{Command \& Conquer}.
+	Av populære sanntidsstrategispill finnes \emph{StarCraft} og \emph{Command \& Conquer}.
 
 \end{description}
 
 \subsubsection{Vårt valg}
-Helt i starten av prosessen som førte til Garbage Alert, begynte vi med å diskutere ulike typer eventyr-tilnærminger. Det føltes svært naturlig, i et spill som skal omhandle resirkulering og gjenbruk, å låne elementer fra den sjangeren som oftest benytter slike mekanismer. Enkelte gruppemedlemmer ønsket dog en mer fartsfull opplevelse, og diskusjoner om å implementere Zelda-aktige elementer i spillet ble tatt opp.
+Helt i starten av prosessen som førte til Garbage Alert, begynte diskusjonen rundt ulike typer eventyr-tilnærminger. Det kan føles svært naturlig, i et spill som skal omhandle resirkulering og gjenbruk, å låne elementer fra den sjangeren som oftest benytter slike mekanismer. Enkelte gruppemedlemmer ønsket dog en mer fartsfull opplevelse, og diskusjoner om å implementere Zelda-aktige elementer i spillet ble tatt opp.
 
 Samtidig ble en alternativ idé utforsket, i kraft av at enkelte ønsket å inkorporere flerspiller og konkurranse som en motivasjonsfaktor. Her startet ideen med å skape et brettspill-inspirert spill. Denne ideen utviklet seg fra å være et svært komplisert turbasert spill, til å bli stadig enklere og raskere, for til slutt å bli et sanntidsstrategispill.
 
@@ -104,8 +104,8 @@ Garbage Alert er i utgangspunktet et flerspiller sanntidsstrategispill,
 men det er også mulighet for å spille alene mot spillere med kunstig
 intelligens. Hver spiller starter med en øy og følgende elementer:
 \begin{itemize}
-	\item Et miljøstasjon
-	\item En våpenstasjon
+	\item En miljøstasjon
+	\item Tre angrepsplattformer
 	\item En forsvarssone
 	\item 10 enheter med papp i inventaret
 	\item 1000 enheter med søppel
@@ -156,7 +156,7 @@ Når en øy er helt overfylt med søppel vil den synke ned i havet. Dette gjør 
 
 \subsection{Gameplay og taktikker}
 
-I dette avsnittet tar vi for oss et typisk spill, spilt av tre deltakere som alle bruker forskjellige taktikker. De forskjellige taktikkene er basert på alfa-testing utført av Re3. Hver taktikk vil få en kort beskrivelse hvor fordeler og ulemper vil bli nevnt. Antall ressurser og helsepoeng vil ikke gis i detalj.
+Dette avsnittet vil ta for seg et typisk spill, spilt av tre deltakere som alle bruker forskjellige taktikker. De forskjellige taktikkene er basert på alfa-testing utført av Re3. Hver taktikk vil få en kort beskrivelse hvor fordeler og ulemper vil bli nevnt. Antall ressurser og helsepoeng vil ikke gis i detalj.
 
 De tre deltakerne i spillet er: \emph{Professor}; \emph{MadMax}; og \emph{N00b87}. Spillet starter og hver spiller ser på en mørk øy fylt til randen av søppel. Det er en dyster og melankolsk stemning, og man får en følelse av at man har reist fram i tid til et post-apokalyptisk samfunn.
 
@@ -188,8 +188,8 @@ angrep kan angripe forsvar).
 \label{fig:spillmatrise}
 \end{figure}
 \end{center}
-I figur~\ref{fig:spillmatrise} er elementene som interagerer er merket
-med en \textbf{X} i den kolonnen og raden de elementene sammenfaller i.
+I figur~\ref{fig:spillmatrise} er elementene som interagerer merket
+med en \textbf{X} i den kolonnen og raden elementene sammenfaller.
 Hvordan elementene interagerer er beskrevet nedenfor:
 \begin{description}
 \item \textbf{Spilleren}\\Spilleren sin oppgave er å samle søppel,
@@ -198,12 +198,12 @@ bygge våpen og forsvar, samt oppgradere miljøstasjonen.
 søppelet. I tillegg er dette hovedbasen for spilleren, og står for alle
 oppgraderingene. En miljøstasjon kan bli angrepet av andre spillere, og
 interagerer derfor med våpen.
-\item \textbf{Søppel}\\Blir plukket opp av spilleren, og lagt på
+\item \textbf{Søppel}\\Søppel blir plukket opp av spilleren, og lagt på
 miljøstasjonen for gjenvinning.
-\item \textbf{Angrep}\\Spillere kan angripe andre spillere sitt forsvar,
+\item \textbf{Angrep}\\Spillere kan angripe andre spillere sitt forsvar, angrep (våpen) 
 og miljøstasjonene deres.
 \item \textbf{Forsvar}\\Forsvaret kan bli angrepet og ødelagt av våpen.
-En spiller bygger forsvaret, derfor koblingen mellom spiller og forsvar.
+En spiller bygger forsvaret, og har derfor interaksjonen mellom spiller og forsvar.
 \item \textbf{Oppgraderinger}\\Spilleren kan oppgradere miljøstasjonen
 sin. Disse oppgraderingene baserer seg på statusen til miljøstasjonen.
 \end{description}
@@ -216,7 +216,7 @@ sin. Disse oppgraderingene baserer seg på statusen til miljøstasjonen.
 Dette delkapittelet forteller om de forskjellige negative og positive
 konsekvensene en spiller kan og vil oppleve gjennom spillets gang. Disse konsekvensene har som hensikt å underbygge landsbyens overordnede tema, som et ledd i å hjelpe spilleren til å forstå hva en gjør som er riktig, og hva en gjør som er galt.
 
-Gjennom å oppgradere miljøstasjonen og dermed kunne bedre håndtere søpla på øya vil en kunne visuelt se at øya blir renere, atmosfæren blir klarere og bakgrunnsmusikken blir penere. Lystige lydeffekter signaliserer at en gjør noe som gir spilleren en fordel i forhold til motspillerne, for eksempel når spilleren oppgraderer utstyr eller utfører et vellykket angrep mot sine
+Gjennom å oppgradere miljøstasjonen og dermed kunne bedre håndtere søppelet på øya vil en kunne visuelt se at øya blir renere, atmosfæren blir klarere og bakgrunnsmusikken blir penere. Lystige lydeffekter signaliserer at en gjør noe som gir spilleren en fordel i forhold til motspillerne, for eksempel når spilleren oppgraderer utstyr eller utfører et vellykket angrep mot sine
 motstandere. Dette skal skaper en positiv mestringsfølelse hos spilleren. 
 
 Videre er der en intrisitt verdi i å vinne et spill over ens
@@ -235,7 +235,7 @@ Når en vinner eller taper et spill vil dette føres opp på spillerens
 profil. Med dette kan hver spiller ha oversikt over sin egen
 spillstatistikk. På spillerens profil finnes det også et profilbilde av
 en kriger. Bildet vil også være synlig for de spillerne man spiller mot
-under et spill. Man begynner med et default profilbilde, og etterhvert
+under et spill. Man begynner med et standard profilbilde, og etterhvert
 som man vinner mange spill får man muligheten til å endre dette bilde.
 Målet med dette er å gi spilleren en visuell prestasjonspremie, i
 tillegg får de spillerne man spiller mot en idé om hvor mye motspilleren
@@ -262,20 +262,20 @@ har spilt spillet tidligere.
 \subsection{Brukergrensesnitt}
 
 Brukergrensessnittet i spillprototypen er svært uferdig, men noe av funksjonaliteten er på plass for å bedre kunne illustrere våre ideer og tanker rundt konseptet. 
-For å gjøre spillet tilgjengelig for vår målgruppe er Garbage Alerts brukergrensesnitt er på norsk, samt at spillets figurer og illustrasjoner er ment å være stiliserte og enkle å forstå.
+For å gjøre spillet tilgjengelig for vår målgruppe er Garbage Alerts brukergrensesnitt på norsk, samt at spillets figurer og illustrasjoner er ment å være stiliserte og enkle å forstå.
 
 
-Det en først ser når en starter spillet er en introskjerm som med sin overdrevne grafikk og lydbilde er ment å sette spilleren i et kompetetivt sinnelag.
-Fra denne skjermen er det mulig å starte spillet ved å trykke den store knappen markert "Start".
-En mer ferdig versjon vil andre valg fra denne skjermen være å stille inn ting som spillernavn, samt mulighet for å koble flere spillere sammen i et flerspillerspill.
+Det man først ser når man starter spillet er en introskjerm som med sin overdrevne grafikk og lydbilde er ment å sette spilleren i et kompetetivt sinnelag.
+Fra denne skjermen er det mulig å starte spillet ved å trykke på den store knappen markert ''Start''.
+En komplett versjon av spillet vil gi spilleren flere valg på introskjermen, som å endre spillernavn, samt gi muligheten til å koble flere spillere sammen i et flerspillerspill.
 
 
-Spillets hovedskjerm\footnote{Den delen av spillet hvor spillet faktisk spilles.} består av et overblikksbilde av alle øyene som er med i spillet. I prototypen er antallet begrenset til to, men en mer moden versjon vil inneholde muligheten til å spille flere enn to stykker samtidig. En skiller mellom en selv og andre ved bruk av ulike farger på spillernes miljøstasjon, våpen og forsvar. I prototypen har vi valgt å fargelegge de to faksjonene rød og blå.
+Spillets hovedskjerm\footnote{Den delen av spillet hvor spillet faktisk spilles.} består av et overblikksbilde av alle øyene som er med i spillet. I prototypen er antallet begrenset til to, men en mer moden versjon vil inneholde muligheten til å spille flere enn to stykker samtidig. En skiller mellom seg selv og andre ved bruk av ulike farger på spillernes miljøstasjon, våpen og forsvar. I prototypen er de to faksjonene farget rød og blå.
 
-I prototypen er hovedskjermen et statisk fugleperspektiv av alle øyene og alle spillets elementer. En ferdig versjon vil og inneholde muligheten til å veksle mellom et detaljbilde av ens egen øy og overblikksbildet over alle øyer. Hvorvidt dette vil gjøres via en knapp som veksler mellom de to visningsmodi eller om en vil "klype for å zoome" er på dette stadiet noe uvisst og bør testes via brukertesting for å finne den optimale metoden.
+I prototypen er hovedskjermen et statisk fugleperspektiv av alle øyene og alle spillets elementer. En ferdig versjon vil også inneholde muligheten til å veksle mellom et detaljbilde av spillerens egen øy og et overblikksbilde over alle øyer. Hvorvidt dette vil gjøres via en knapp som veksler mellom de to visningsmodi eller om en vil ''klype for å zoome'' er på dette stadiet noe uvisst og bør testes via brukertesting for å finne den optimale metoden.
 
-Garbage Alert er tenkt å først og fremst spilles på mobiltelefoner og andre enheter med berøringsskjerm. En interagerer derfor med elementene på skjermen ved å trykke på de. Det en må være spesielt oppmerksom på med slike skjermer er å holde knapper store nok, samt at aller elementer på skjermen må være forskjellige nok til at det er enkelt å skille de fra hverandre på små skjermer.
+Garbage Alert er tenkt å først og fremst spilles på mobiltelefoner og andre enheter med berøringsskjerm. Man interagerer derfor med elementene på skjermen ved å trykke på de. Det man må være spesielt oppmerksom på med slike skjermer er å holde knapper store nok, samt at alle elementer på skjermen må være forskjellige nok til at det er enkelt å skille dem fra hverandre på små skjermer.
 
-Spillet kan og spilles på en datamaskin i en nettleser, og en kan derfor også bruke en musepeker for å trykke på elementene på samme måte.
+Spillet kan også spilles på en datamaskin i en nettleser, og en kan derfor også bruke en musepeker for å trykke på elementene på samme måte.
 
-Merk at da vi under utviklingen kun har testet prototypen på en dataskjerm er ikke spillet per nå tilpasset mobiltelefoner i så stor grad som det burde være. Enkle tester på mobiltelefon har dog blitt gjort, men har vært nedprioritert grunnet tidspress.
+Merk at det under utviklingen kun er testet en prototype på en dataskjerm, og spillet er per nå ikke  tilpasset mobiltelefoner i like stor grad som det burde være. Enkle tester på mobiltelefon har dog blitt utført, men har vært nedprioritert grunnet tidspress.
