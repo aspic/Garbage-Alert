@@ -5,8 +5,8 @@
 %%% Date: February 2011
 
 %%% Preamble
-\documentclass[12pt,a4paper]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
-\usepackage[norsk]{babel}														% English language/hyphenation
+\documentclass[12pt,a4paper,twoside]{scrartcl}	% Article class of KOMA-script with 11pt font and a4 format
+\usepackage[english]{babel}														% English language/hyphenation
 \usepackage[protrusion=true,expansion=true]{microtype}				% Better typography
 \usepackage{amsmath,amsfonts,amsthm}										% Math packages
 \usepackage[pdftex]{graphicx}														% Enable pdflatex
@@ -72,12 +72,14 @@
 \include{intro}
 \include{problem}
 \include{process}
+\cleardoublepage
 \include{concept}
 \include{spillutforming}
+\cleardoublepage
 \include{tech}
-\include{genre}
+\cleardoublepage
 \include{artwork}
-\include{avsluttning}
+\cleardoublepage
 \include{conclusion}
 \thispagestyle{empty}
 \bibliographystyle{plain}
