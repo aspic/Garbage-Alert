@@ -55,12 +55,12 @@ Miljøstasjonen kan oppgraderes på tre måter for å forbedre effektiviteten:
 	\item \textbf{Volum/Utvinningsgrad}\\
 		Denne oppgraderingen kan øke utvinningsgraden og volumet av søppel som blir brukt i gjennvinningsprosessen. Restavfallet (søppelet som ikke blir gjenvunnet) vil på magisk vis bli borte. Tabell \ref{tab:effektivitet} viser oppgraderingene for Volum/Utvinningsgrad. Man starter på nivå 0, og deretter kan man oppgradere ett trinn ad gangen.
 	\item \textbf{Buffer}\\
-		Miljøstasjonen kan få en buffer hvor spilleren kan samle opp søppel, som automatiserer gjenvinningsprosessen til en viss grad. Dermed kan spilleren bruke mindre tid på å sørge for at søppelet på øyen blir flyttet til miljøstasjonen.
+		Miljøstasjonen kan få en buffer hvor spilleren kan samle opp søppel, som automatiserer gjenvinningsprosessen til en viss grad. Dermed kan spilleren bruke mindre tid på å sørge for at søppelet på øya blir flyttet til miljøstasjonen.
 	\item \textbf{Ressurser}\\
-		For å kunne gjenvinne nye typer ressurser må spilleren oppgradere gjenvinningsstasjonen. Her får spilleren valget mellom to ulike veier som vil avgjøre hvilke ressurser spilleren får tilgang til (se figur \ref{fig:ressursoppgraderinger}).
+		For å kunne gjenvinne nye typer ressurser må spilleren oppgradere miljøstasjonen. Her får spilleren valget mellom to ulike veier som vil avgjøre hvilke ressurser spilleren får tilgang til (se figur \ref{fig:ressursoppgraderinger}).
 \end{description}
 
-\begin{table} \label{tab:effektivitet}
+\begin{table}
 	\begin{tabular}[\textwidth]{ l  l  p{3cm}  l  p{4cm} }
 		\hline
 		\bf{Effektivitet} & \bf{Utvinningsgrad} & \bf{Volum} & \bf{Tid} & \bf{Ressurskrav} \\
@@ -71,6 +71,7 @@ Miljøstasjonen kan oppgraderes på tre måter for å forbedre effektiviteten:
 		Nivå 3 & 30 & 20 & 15sek & Papp, plast, tre, stål, jern og titan \\
 		\hline
 	\end{tabular}
+	\label{tab:effektivitet}
 	\caption{Oppgraderinger for Volum/Utvinningsgrad}
 \end{table}
 
@@ -103,3 +104,4 @@ Under utviklingen og alfa-testingen av spillet har Re3 kommet frem til en prisli
 Prislisten er utviklet slik at det hele tiden er knapt med ressurser. Det vil si at nesten alle bygninger og oppgraderinger koster noe papp, osv, for at denne ressursen ikke hoper seg opp. Utkastet av prislisten finnes i appendiks \ref{A}.
 
 Tanken bak helsepoengene og angrepsverdiene er at to angrep av et type våpen ødelegger en mur bygget av samme ressurs som våpenet. Det vil si at to angrep fra en katapult ødelegger en tremur. Et våpen som er et nivå høyere enn forsvaret vil ødelegge 90\% av muren. Dersom angrepet er to nivå (eller mer) høyere enn forsvaret vil muren bli ødelagt i tillegg til at våpen/miljøstasjon vil ta skade. Et komplett utkast over helsepoeng og angrepsverdier finnes i appendiks \ref{B}. Disse verdiene er dog det mest usikre med denne prototypen, og er noe som må justeres gjennom mye utprøving.
+
