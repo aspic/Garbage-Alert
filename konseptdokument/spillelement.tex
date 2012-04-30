@@ -18,15 +18,15 @@ i Garbage Alert.
 Ressurser er et viktig element i Garbage Alert. Ressursene er det som
 gjør at spillere kan utvikle basen sin, bygge forsvar og utvikle angrep.
 Valget av ressurser er basert på Mohs hardhetsskala av mineraler \cite{mohs}. Mohs hardhetskala er en liste over mineraler i rekkefølge etter absolutt hardhet, laget av geologen Friedrich Mohs. Hvert mineral skal kunne skrape mineralet som står foran på listen. Ressursene i Garbage Alert er dog ikke helt korrekte i forhold til Mohs hardhetsskala. Ideen er at hver de seks ressursene i spillet følger samme regel, nemlig at den ene ressursen er hardere enn den andre og har mulighet til å ødelegge den. 
-De forskjellige typene utvinnbare ressurser er:
+De forskjellige typene gjenvinnbare ressurser er:
 
 \begin{description}
-	\item \textbf{Papp}\\ Denne ressursen kan utvinnest uten å måtte oppgradere miljøstasjonen. Dette er den enkleste ressursen å få fatt i, men skaper kun relativt svake angrep/forsvar.
-	\item \textbf{Plast}\\ Denne ressursen kan man utvinne etter å ha oppgradert hovedbasen én gang.
-	\item \textbf{Tre}\\ Tre kan utvinnest dersom hovedbasen har blitt oppgradert til dette. Tre er på samme oppgraderingsnivå som plast, med andre ord må spilleren velge mellom desse to i begynnelsen. Tre er derimot hardere enn plast i dette spillet.
-	\item \textbf{Jern}\\ Jern er mulig å utvinne dersom spilleren først oppgraderer til tre.
+	\item \textbf{Papp}\\ Denne ressursen kan gjenvinnest uten å måtte oppgradere miljøstasjonen. Dette er den enkleste ressursen å få fatt i, men skaper kun relativt svake angrep/forsvar.
+	\item \textbf{Plast}\\ Denne ressursen kan man gjenvinne etter å ha oppgradert hovedbasen én gang.
+	\item \textbf{Tre}\\ Tre kan gjenvinnest dersom hovedbasen har blitt oppgradert til dette. Tre er på samme oppgraderingsnivå som plast, med andre ord må spilleren velge mellom desse to i begynnelsen. Tre er derimot hardere enn plast i dette spillet.
+	\item \textbf{Jern}\\ Jern er mulig å gjenvinne dersom spilleren først oppgraderer til tre.
 	\item \textbf{Stål}\\ Stål bygger på at spilleren først har oppgradert til plast.
-	\item \textbf{Titan}\\ Titan er den siste ressursen som er mulig å utvinne. For å kunne utvinne titan må spilleren først ha skaffet seg alle utvinningsutvidelsene til hovedbasen.
+	\item \textbf{Titan}\\ Titan er den siste ressursen som er mulig å gjenvinne. For å få tak i denne ressursen må spilleren først ha skaffet seg \emph{alle} gjenvinningsutvidelsene til hovedbasen.
 \end{description}
 
 
@@ -40,7 +40,7 @@ Det er også mulig å skade forsvar og våpen som er bygget av en bedre ressurs 
 	\label{fig:ressursoppgraderinger}
 \end{figure}
 
-\subsubsection{Ressursutvinning}
+\subsubsection{Ressursgjenvinning}
 Spillere skaffer seg ressurser ved å gjenvinne søppel som ligger
 spredt rundt på øya. Dette blir gjort ved hjelp av miljøstasjonen
 som hver spiller starter med. For å aktivisere spilleren må en "fysisk" dra søppel fra øya og over på miljøstasjonen. Denne vil så bruke noe tid på å prosessere søplet og gjenvinne ressurser fra dette.
@@ -52,11 +52,11 @@ Alert. Denne kan bli sett på som hovedbasen i spillet.
 Miljøstasjonen kan oppgraderes på tre måter for å forbedre effektiviteten:
 
 \begin{description}
-	\item \textbf{Volum/Utvinningsgrad}\\
-		Denne oppgraderingen kan øke utvinningsgraden og volumet av
+	\item \textbf{Volum/Gjenvinningsgrad}\\
+		Denne oppgraderingen kan øke gjenvinningsgraden og volumet av
 søppel som blir brukt i gjennvinningsprosessen. Restavfallet (søppelet
 som ikke blir gjenvunnet) vil på magisk vis bli borte. Tabell
-\ref{tab:effektivitet} viser oppgraderingene for Volum/Utvinningsgrad.
+\ref{tab:effektivitet} viser oppgraderingene for Volum/Gjenvinningsgrad.
 Man starter på nivå 0, og deretter kan man oppgradere ett trinn av
 gangen.
 	\item \textbf{Buffer}\\
@@ -68,7 +68,7 @@ gangen.
 \begin{table}
 	\begin{tabular}[\textwidth]{ l  l  p{3cm}  l  p{4cm} }
 		\hline
-		\bf{Effektivitet} & \bf{Utvinningsgrad} & \bf{Volum} & \bf{Tid} & \bf{Ressurskrav} \\
+		\bf{Effektivitet} & \bf{Gjenvinningsgrad} & \bf{Volum} & \bf{Tid} & \bf{Ressurskrav} \\
 		\hline
 		Nivå 0 & 10 & 10 & 15sek & Ingen  \\
 		Nivå 1 & 20 & 10 & 15sek & Papp \\
@@ -76,7 +76,7 @@ gangen.
 		Nivå 3 & 30 & 20 & 15sek & Papp, plast, tre, stål, jern og titan \\
 		\hline
 	\end{tabular}
-	\caption{Oppgraderinger for Volum/Utvinningsgrad}
+	\caption{Oppgraderinger for Volum/Gjenvinningsgrad}
 	\label{tab:effektivitet}
 \end{table}
 
