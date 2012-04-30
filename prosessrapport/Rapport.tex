@@ -1,6 +1,6 @@
 % This template was grabbed from http://www.vel.co.nz
 
-\documentclass[12pt,norsk,a4paper]{article}
+\documentclass[12pt,norsk,a4paper,twoside]{scrartcl}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{babel}
@@ -23,20 +23,22 @@
 \input{title.tex} % TITLE PAGE
 
 \tableofcontents
-
-\newpage
+\cleardoublepage
 
 % Sections
 \include{abstract}
 
 % Innledning
 \include{innledning}
+\cleardoublepage
 
 % Presentasjon av gruppen
 \include{gruppen}
+\cleardoublepage
 
 % Hoveddel
 \include{hoveddel}
+\cleardoublepage
 
 % Avslutning
 \include{avslutning}
