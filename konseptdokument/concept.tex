@@ -1,30 +1,29 @@
 %!TEX root = report.tex
 \section{Konsept og spillutforming}\label{sec:konsept}
-Dette kapittelet forteller om konseptet som ble utviklet, definisjoner
-og begrep som ble utviklet i forbindelse med spillet og selve
+Dette kapitelet forteller om et konsept som har blitt utviklet, de definisjoner
+og begrep som har blitt utviklet i forbindelse med spillet og selve
 spilldynamikken. I tillegg blir de ulike spillelementene forklart.
+
 \subsection{Introduksjon: Garbage Alert}
-Garbage Alert er strategispillet der du bestemmer verdens skjebne ved å
+Garbage Alert er strategispillet hvor du bestemmer verdens skjebne gjennom å
 gjenvinne og krige med søppel. Spillet har resirkulering i sentrum
 samtidige som det skal være et underholdende strategispill for deg
-mellom 9 og 99 år. 
-			\begin{figure} [here]
-				\begin{center}
-					\includegraphics[scale=0.5]{images/splashscreen}
-				\end{center}
-			\caption{Garbage Alert splash screen}
-		\end{figure}
+mellom 10 og 17 år.
+
+	\begin{figure} [here]
+		\begin{center}
+		\includegraphics[scale=0.5]{images/splashscreen}
+		\end{center}
+		\caption{Garbage Alert splash screen}
+	\end{figure}
 
 
-Man starter på en øy overfyllt med søppel. Målet med spillet er å bli
+Man starter på en øy fylt til randen med søppel. Målet med spillet er å bli
 kvitt søppelet. Ved å gjenvinne avfallet får man ulike muligheter til å
 bombandere de andre spillerne, forsvare sin egen øy, for så å stå igjen
 som vinneren på en øy uten søppel, eller som eneste spiller i live.
 
-Spillet er utviklet av en gruppe studenter på NTNU i faget Eksperter i
-Team. Spilldesignerne går under navnet \input{re3}. \input{re3} består av Andreas
-Røysland Aarnes, Trond Kjetil Bremnes, Christian Aleksander Lysne,
-Kjetil Mehl og Ina Sander Pedersen.
+Spillet er utviklet av en gruppe studenter på NTNU i faget Eksperter i Team. Spilldesignerne og -utviklerne går under navnet \input{re3}. \input{re3} består av Andreas Røysland Aarnes, Trond Kjetil Bremnes, Christian Aleksander Lysne, Kjetil Mehl og Ina Sander Pedersen.
 
 Målet med denne seksjonen er å gi deg et innblikk i det utviklede
 spillkonseptet, hvilke spillaspekter som er tatt med og spillets
@@ -34,7 +33,7 @@ dynamikk.
 \subsection{Spilldynamikken}
 Garbage Alert er i utgangspunktet et flerspiller sanntidsstrategispill,
 men det er også mulighet for å spille alene mot spillere med kunstig
-intelligens. Man starter spillet med en øy og følgende elementer:
+intelligens. Hver spiller starter med en øy og følgende elementer:
 \begin{itemize}
 	\item Et miljøstasjon
 	\item En våpenstasjon
@@ -55,45 +54,44 @@ Jo flere typer ressurser man får gjenvunnet fra søppelet, jo flere muligheter 
 
 \subsection{Globale og lokale katastrofer}\label{sec:hazards}
 
-I den virkerlige verden har søppel innvirkning på det lokale og globale miljøet. Slik er det også i Garbage Alert. Jo mer søppel som blir kastet frem og tilbake mellom spillerne, jo høyere blir risikoen for at en katastrofe inntreffer. Spilleren som har brukt våpnene mye har en høy risiko for at en lokal katastrofe inntreffer. Dette gjør spillet vanskeligere for spillerne som ligger godt an. Den totale våpenkraften som har blitt brukt av alle spillerne er med på å øke sannsynligheten for globale katastrofer.
+I den virkerlige verden har søppel innvirkning på det lokale og globale miljøet. Slik er det også i Garbage Alert – jo mer søppel som blir kastet frem og tilbake mellom spillerne, jo høyere blir risikoen for at en katastrofe inntreffer. Spillere som har brukt våpnene mye via ha en høy risiko for at en lokal katastrofe inntreffer. Dette gjør at spillet har en høyere vanskeligehetsgrad for de spillerne som ligger godt an sett i forhold til motspillerne. Denne formen for dynamisk vanskelighetsbalansering gjør det slik at en kan hente seg inn igjen selv om en kanskje gjør det litt dårlig i starten.
 
-Hver spiller vil ha to måleinstrument på panelet sitt på skjermen som viser sannsynligheten for at en geologisk eller en biologisk katastrofe kan intreffe, såkalte geohazards og biohazards.
+Den totale våpenkraften som har blitt brukt av alle spillerne er med på å øke sannsynligheten for globale katastrofer. Hver spiller vil ha to måleinstrument på panelet sitt på skjermen som viser sannsynligheten for at en geologisk eller en biologisk katastrofe kan inntreffe, såkalte geohasarder og biohasarder.
+
 
 \subsubsection{Geohasarder}
 Geologiske katastrofer kan intreffe som et resultat av global oppvarmning og mekanisk påvirkning fra mennesker.
-Et eksempel på en global geologisk katastrofe som kan intreffe er tsunamier. En tsunami vil gjøre skade på den eventuelle muren spilleren har og muligens også ødelegge våpen og miljøstasjon utover dette. Hvovidt dette skjer vil bero på murens styrke og resterende helsepoeng.
-Eksempler på lokale geologiske katastrofer er jordskjelv og kolliderende isfjell. Jordskjelv gjør en liten skade på alle bygninger på øyen. Isfjellet vil kollidere i muren og gjøre en viss skade på den og muligens ødelegge den avhengig av murens styrke. 
+Et eksempel på en global geologisk katastrofe som kan intreffe er tsunamier. En tsunami vil gjøre skade på den eventuelle muren spilleren har og muligens også ødelegge våpen og miljøstasjon utover dette. Hvorvidt dette skjer vil bero på murens styrke (som i sin tur beror på murens byggemateriale) og resterende helsepoeng. Eksempler på lokale geologiske katastrofer er jordskjelv og kolliderende isfjell. Jordskjelv gjør en liten skade på alle bygninger på øyen. Isfjellet vil kollidere i muren og gjøre en viss skade på den og muligens ødelegge den avhengig av murens styrke. 
 
+% Si noe om at disse elementene ikke er ferdige?
 
 \subsubsection{Biohasarder}
-Et resultat av mye forsøpling av hav og øyer kan være biologiske katastrofer, der et eksempel som vil ramme alle øyene er sur nedbør. Dette vil gi korrosjon av våpen og forsvarsmurer laget av metall og dermed skade disse, samt at planter og trær også vil ta skade og gi øya et trist utseende.
-I tillegg kan lokale biologiske katastrofer inntreffe, der det vil bryte ut sykdommer pga bakterievekst som gjør at utvinning av ressurser på miljøstasjonen og muligheten for våpenangrep stanser opp for en periode.
+Et resultat av mye forsøpling av øyene og det omringende havet kan være biologiske katastrofer.
+Et eksempel på en global katastrofe som vil ramme samtlige spillere er sur nedbør. Dette vil gi korrosjon av våpen og forsvarsmurer laget av metall og dermed skade disse, samt at planter og trær også vil ta skade og gi øya et trist utseende.
+
+Eksempler på lokale biologiske katastrofer som kan inntreffe er utbrudd av sykdommer på grunn av bakterievekst, som i sin tur gjør at utvinning av ressurser på miljøstasjonen og muligheten for våpenangrep stanser opp for en periode.
 
 
 \subsection{Spillatmosfære}
 
-Ved spillstart er himmelen full av mørke skyer og musikken vil ha et melankolsk preg. Stemningen er tung og dyster. Fargene på spillområdet er uklare og skitne fordi øya er forurenset av søppel.
-Når søppel fjernes fra øya vil stemningen lysne ved at skyene blir hvite og forsvinner med tiden. Musikken blir lystigere, 
-solen kommer fram og fargene på øya øker gradvis i styrke. Det vil begynne å gro gress, blomster og 
-trær på områder av øya som blir frigjort for søppel, og små hus vil dukke opp ettersom øya blir renere. 
+Ved spillstart er himmelen fylt av mørke skyer og musikken vil ha et melankolsk preg. Stemningen er tung og dyster. Fargene på spillområdet er uklare og skitne fordi øya er forurenset av søppel.
+Når søppel fjernes fra øya vil stemningen bli lysere ved at skyene blir hvite og forsvinner med tiden. Musikken blir lystigere, sola kommer fram og fargene på øya øker gradvis i intensitet. Det vil begynne å gro gress, blomster og 
+trær på områder av øya som blir frigjort for søppel. Mennesker trives bedre på øya, og små hus vil dukke opp ettersom øya blir renere. 
 
-Stemningen på en ren og fin øy kan også forverres hvis den mottar mye søppel fra motstanderne og det ikke fjernes i tilstrekkelig hastighet,
+Stemningen på en ren og fin øy vil forverres dersom den mottar mye søppel fra motstanderne, og det ikke fjernes i tilstrekkelig hastighet,
 eller hvis miljøstasjonen på øya ødelegges slik at søppel ikke blir gjenvunnet.
 Blomster og trær vil visne når områdene de gror på forurenses av søppel, en klar blå himmel blir dekket av skyer som etterhvert mørkner og
 musikken blir jevnt mer melankolsk. 
-Når en øy er helt overfylt med søppel vil den synke ned i havet. Dette gjør at havet  får et forurenset utseende,
- og de resterende spillerne vil bli utsatt for en global katastrofe.
+Når en øy er helt overfylt med søppel vil den synke ned i havet. Dette gjør at havet får et forurenset utseende, og de resterende spillerne vil bli utsatt for en global katastrofe. % Dette nevnes for første gang her.
 
 
 \subsection{Gameplay og taktikker}
 
-I dette avsnittet tar vi for oss et eksempel med tre deltakere som alle bruker forskjellige taktikker. De forskjellige taktikkene er basert på alfa-testing utført av Re3. Hver taktikk vil få en kort beskrivelse hvor fordeler og ulemper vil bli nevnt. Antall ressurser og hitpoints vil ikke gis i detalj.
+I dette avsnittet tar vi for oss et typisk spill, spilt av tre tre deltakere som alle bruker forskjellige taktikker. De forskjellige taktikkene er basert på alfa-testing utført av Re3. Hver taktikk vil få en kort beskrivelse hvor fordeler og ulemper vil bli nevnt. Antall ressurser og helsepoeng vil ikke gis i detalj.
 
-Spillet starter og hver spiller ser på en mørk øy fylt til randen av søppel. Det er en dyster og melankolsk stemning, og man får en følelse av at man har reist fram i tid til et post-apokalyptisk samfunn.
+De tre deltakerne i spillet er: \emph{Professor}; \emph{MadMax}; og \emph{N00b87}. Spillet starter og hver spiller ser på en mørk øy fylt til randen av søppel. Det er en dyster og melankolsk stemning, og man får en følelse av at man har reist fram i tid til et post-apokalyptisk samfunn.
 
-For å illustrere spillets gang vil vi gå gjennom et eksempelspill spilt av tre spillere med ulike taktikker: \emph{Professor}; \emph{MadMax}; og \emph{N00b87}.
-
-Spilleren med navnet Professor har valgt å kun fokusere på oppgraderinger knyttet til effektivitet for å raskt bli kvitt søppelet sitt gjennom gjenvinning på miljøstasjonen. Denne taktikken kan raskt avslutte spillet, men risikoen er meget høy. Dersom Professor blir angrepet må han endre taktikk raskt. Forhåpentligvis kommer ikke angrepene med en gang, og han vil raskt ha flere ressurser enn de andre spillerne. Etterhvert som spillet går bør Professor bygge en mur, for å unngå at et enkelt angrep med et høyt utviklet våpen tar miljøstasjonen hans på ett skudd. Hvis han klarer å komme seg til effektivitets nivå 3 før han blir angrepet, blir han veldig raskt kvitt søppelet sitt, ettersom denne oppgraderingen dobler gjenvinningsraten. 
+Spilleren med navnet Professor har valgt å kun fokusere på oppgraderinger knyttet til effektivitet for å raskt bli kvitt søppelet sitt gjennom gjenvinning på miljøstasjonen. Denne taktikken kan raskt avslutte spillet, men risikoen er meget høy. Dersom Professor blir angrepet må han endre taktikk raskt. Forhåpentligvis kommer ikke angrepene med en gang, og han vil raskt ha flere ressurser enn de andre spillerne. Etterhvert som spillet går bør Professor bygge en mur, for å unngå at et enkelt angrep med et høyt utviklet våpen tar miljøstasjonen hans på ett skudd. Dersom han klarer å komme seg til effektivitetsnivå 3 før han blir angrepet, blir han veldig raskt kvitt søppelet sitt, ettersom denne oppgraderingen dobler gjenvinningsraten. 
 
 Spilleren MadMax velger å kjøre en aggresiv taktikk. Det første han gjør er å bygge et papirfly, slik at han allerede fra starten klarer å dumpe noe av søppelet sitt på de andre spillerne. Fordelen med et kjapt angrep er at spillerne som blir angrepet alltid vil ligge et skritt bak, og ikke kunne angripe han tilbake. Det første de andre spillerne vil gjøre etter et angrep er å sikre miljøstasjonen sin mot utslettelse ved å bygge en mur. MadMax kan dermed bruke ressursene sine på våpen hele tiden, mens de andre spillerne må fortsette å reparere og bygge muren sin. MadMax er avhengig av å utslette de andre spillerne eller sende bort alt søppelet sitt raskt. Hvis det tar for lang tid vil de andre spillerne etterhvert få bedre oppgraderinger, og MadMax sine angrep vil til slutt ikke kunne penetrere muren til de andre spillerne.
 
@@ -109,10 +107,10 @@ Adrenalinet av å bombe de andre spillerne og å selv bli knust; raske avgjørel
 % This should allow an easy cross reference for an elements in the game
 % that a value. 
 \subsection{Spillmatrisen}
-Spillmatrisen (se Figur~\ref{fig:spillmatrise}) er en grafisk forklaring
+Spillmatrisen (se figur \ref{fig:spillmatrise}) er en grafisk forklaring
 på hvilke elementer i spillet som interagerer med hverandre. Elementer
 som våpen, forsvar og oppgraderinger er kun beskrevet på et overordnet
-nivå, siden disse elementene deler like egenskaper (f.eks. at alle
+nivå, siden disse elementene deler like egenskaper (for eksempel at alle
 angrep kan angripe forsvar).
 \begin{center}
 \begin{figure} [H]
@@ -121,8 +119,8 @@ angrep kan angripe forsvar).
 \label{fig:spillmatrise}
 \end{figure}
 \end{center}
-I Figur~\ref{fig:spillmatrise} er elementene som interagerer er merket
-med en \textbf{X} i den kollonnen og raden de elementene sammenfaller i.
+I figur~\ref{fig:spillmatrise} er elementene som interagerer er merket
+med en \textbf{X} i den kolonnen og raden de elementene sammenfaller i.
 Hvordan elementene interagerer er beskrevet nedenfor:
 \begin{description}
 \item \textbf{Spilleren}\\Spilleren sin oppgave er å samle søppel,
@@ -147,15 +145,11 @@ sin. Desse oppgraderingene baserer seg på statusen til miljøstasjonen.
 % player can use the object.
 \subsection{Spillkonsekvenser}
 Dette delkapittelet forteller om de forskjellige negative og positive
-konsekvensene en spiller kan og vil oppleve gjennom spillets gang.
+konsekvensene en spiller kan og vil oppleve gjennom spillets gang. Disse konsekvensene har som hensikt å underbygge …
+, som et ledd i å hjelpe spilleren til å forstå hva en gjør som er riktig, og hva en gjør som er galt.
 
-Gjennom å oppgradere miljøstasjonen vil en kunne visuelt se at øya blir
-renere, atmosfæren blir klarere og bakgrunnsmusikken blir penere.
-Lystige lydeffekter signaliserer at en gjør noe som gir spilleren en
-fordel i forhold til motspillerne, for eksempel når spilleren
-oppgraderer utstyr eller utfører et vellykket angrep mot sine
-motstandere. Dette skal skaper en positiv følelse av mestring hos
-spilleren. 
+Gjennom å oppgradere miljøstasjonen og dermed kunne bedre håndtere søpla på øya vil en kunne visuelt se at øya blir renere, atmosfæren blir klarere og bakgrunnsmusikken blir penere. Lystige lydeffekter signaliserer at en gjør noe som gir spilleren en fordel i forhold til motspillerne, for eksempel når spilleren oppgraderer utstyr eller utfører et vellykket angrep mot sine
+motstandere. Dette skal skaper en positiv mestringsfølelse hos spilleren. 
 
 Videre er der en intrisitt verdi i å vinne et spill over ens
 medspillere.
@@ -164,14 +158,13 @@ For å kunne underbygge spillets underliggende tematikk om
 miljøvennlighet vil naturen straffe spillerne som ikke tenker miljø.
 Geologiske og biologiske katastrofer er konsekvensene som rammer en
 eller alle spillerne.
-
 På samme måte som at muntre lydeffekter underbygger gode handlinger
 gjort av spilleren, vil dystre lydeffekter signalisere negative
 hendelser. Dette kan for eksempel være i det en blir angrepet av
 motspillerne. 
 
-Når man vinner eller taper et spill vil dette føres opp på spillerens
-profil. Med dette kan hver spiller ha kontroll over sin egen
+Når en vinner eller taper et spill vil dette føres opp på spillerens
+profil. Med dette kan hver spiller ha oversikt over sin egen
 spillstatistikk. På spillerens profil finnes det også et profilbilde av
 en kriger. Bildet vil også være synlig for de spillerne man spiller mot
 under et spill. Man begynner med et default profilbilde, og etterhvert
@@ -200,27 +193,21 @@ har spilt spillet tidligere.
 
 \subsection{Brukergrensesnitt}
 
-Brukergrensessnittet i spillet er i prototypen noe infantilt og uferdig.
+Brukergrensessnittet i spillprototypen er svært uferdig, men noe av funksjonaliteten er på plass for å bedre kunne illustrere våre ideer og tanker rundt konseptet. 
+For å gjøre spillet tilgjengelig for vår målgruppe er Garbage Alerts brukergrensesnitt er på norsk, samt at spillets figurer og illustrasjoner er ment å være stiliserte og enkle å forstå.
 
 
-Vi har bevisst valgt å holde språket i spillet norsk, og overalt hvor en finner tekst i spillet vil den være på norsk. % bah, møkkasetning.
-
-
-Det en først ser når en starter spillet er en introskjerm som med sin grafikk og lydbilde er ment å sette spilleren i et kompetetivt sinnelag.
-
+Det en først ser når en starter spillet er en introskjerm som med sin overdrevne grafikk og lydbilde er ment å sette spilleren i et kompetetivt sinnelag.
 Fra denne skjermen er det mulig å starte spillet ved å trykke den store knappen markert "Start".
 En mer ferdig versjon vil andre valg fra denne skjermen være å stille inn ting som spillernavn, samt mulighet for å koble flere spillere sammen i et flerspillerspill.
 
 
-Spillets hovedskjerm % Forklare litt bedre hva vi mener med hovedskjerm
-består av et overblikksbilde av alle øyer som er med i spillet. I prototypen er antallet begrenset til to, men en mer moden versjon vil inneholde muligheten til å spille flere enn to stykker samtidig. En skiller mellom en selv og andre ved bruk av ulike farger på spillernes miljøstasjon, våpen og forsvar. I prototypen har vi valgt å fargelegge de to faksjonene rød og blå.
+Spillets hovedskjerm\footnote{Den delen av spillet hvor spillet faktisk spilles.} består av et overblikksbilde av alle øyene som er med i spillet. I prototypen er antallet begrenset til to, men en mer moden versjon vil inneholde muligheten til å spille flere enn to stykker samtidig. En skiller mellom en selv og andre ved bruk av ulike farger på spillernes miljøstasjon, våpen og forsvar. I prototypen har vi valgt å fargelegge de to faksjonene rød og blå.
 
-I prototypen er denne skjermen et statisk fugleperspektiv av alle øyene og alle spillets elementer. En ferdig versjon vil og inneholde muligheten til å veksle mellom et detaljbilde av ens egen øy og overblikksbildet over alle øyer. Hvorvidt dette vil gjøres via en knapp som veksler mellom de to visningsmodi eller om en vil "klype for å zoome" er på dette stadiet uvisst og bør testes via brukertesting for å finne den optimale metoden.
-
+I prototypen er hovedskjermen et statisk fugleperspektiv av alle øyene og alle spillets elementer. En ferdig versjon vil og inneholde muligheten til å veksle mellom et detaljbilde av ens egen øy og overblikksbildet over alle øyer. Hvorvidt dette vil gjøres via en knapp som veksler mellom de to visningsmodi eller om en vil "klype for å zoome" er på dette stadiet noe uvisst og bør testes via brukertesting for å finne den optimale metoden.
 
 Garbage Alert er tenkt å først og fremst spilles på mobiltelefoner og andre enheter med berøringsskjerm. En interagerer derfor med elementene på skjermen ved å trykke på de. Det en må være spesielt oppmerksom på med slike skjermer er å holde knapper store nok, samt at aller elementer på skjermen må være forskjellige nok til at det er enkelt å skille de fra hverandre på små skjermer.
 
 Spillet kan og spilles på en datamaskin i en nettleser, og en kan derfor også bruke en musepeker for å trykke på elementene på samme måte.
-
 
 Merk at da vi under utviklingen kun har testet prototypen på en dataskjerm er ikke spillet per nå tilpasset mobiltelefoner i så stor grad som det burde være. Enkle tester på mobiltelefon har dog blitt gjort, men har vært nedprioritert grunnet tidspress.
