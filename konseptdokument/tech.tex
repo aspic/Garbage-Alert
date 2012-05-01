@@ -1,6 +1,6 @@
 %!TEX root = report.tex
 \section{Teknisk utførelse}\label{sec:teknisk}
-Denne seksjonen vil detaljere hvordan Garbage Alert per i dag er
+Denne seksjonen vil detaljere hvordan \emph{Garbage Alert} per i dag er
 implementert, samt tanker om videre utvikling til en eventuell ferdig
 versjon.
 \subsection{Tidlig prototype}
@@ -12,7 +12,9 @@ denne prototypen. Et mål var å ha noe som fungerte, men samtidig
 realisere den med minimal bruk av tid.
 \begin{figure} [H]
 	\begin{center}
-	\includegraphics[scale=0.5]{images/screenshot_tidlig_prototype.png}
+	\setlength\fboxsep{0.2pt}
+	\setlength\fboxrule{0.7pt}
+	\fbox{\includegraphics[scale=0.5]{images/screenshot_tidlig_prototype.png}}
 	\end{center}
 	\caption{Skjermskudd av vår tidlige prototype}
 	\label{fig:screenshot_tidlig_prototype}
@@ -31,12 +33,12 @@ Denne prototype-koden ble senere mye brukt, sammen med en bedre grafisk
 presentasjon, for å realisere den endelige protoypen.
 
 \subsection{Endelig prototype}
-Garbage Alert-prototypen slik den er i dag er implementert med de nye
+\emph{Garbage Alert}-prototypen slik den er i dag er implementert med de nye
 web-teknologiene (noe unøyaktig) kjent som HTML5. Mer nøyaktig vil dette
 si at spillet er implementert med et \texttt{<canvas>} element, et lite
-''malebrett'' som en kan tegne på programmatisk med JavaScript. Dette
-medfører at Garbage Alert i prinsippet kan kjøres hvor som helst der en
-har en moderne nettleser med støtte for JavaScript. Garbage Alert har
+``malebrett'' som en kan tegne på programmatisk med JavaScript. Dette
+medfører at \emph{Garbage Alert} i prinsippet kan kjøres hvor som helst der en
+har en moderne nettleser med støtte for JavaScript. \emph{Garbage Alert} har
 moderne berøringsbaserte mobiltelefoner som hovedplattform, hvor slik
 teknologi kjører uten problemer.
 
@@ -49,13 +51,13 @@ implementert på en ordentlig måte, konform med resten av koden.
 
 
 \subsubsection{Systemkrav}
-Som nevnt over er Garbage Alert først og fremst ment å kunne spilles på
+Som nevnt over er \emph{Garbage Alert} først og fremst ment å kunne spilles på
 mobiltelefoner.
 Da spillet er implementert som et web-basert spill vil det i prinsippet
 ikke være en begrensning på hvilket operativsystem telefonen kjører, det
 være Apple iOS, Google Android eller Windows Phone 7, så lenge telefonen
 leveres med en moderne nettleser. Nettbrett som Apple iPad og Samsung
-Galaxy Tab vil og kunne kjøre Garbage Alert.
+Galaxy Tab vil og kunne kjøre \emph{Garbage Alert}.
 
 I tillegg til dette vil spillet kunne spilles ellers hvor der finnes
 moderne/kompatible nettlesere. Det store aberet her er at
@@ -66,7 +68,7 @@ en tradisjonell datamaskin, men ikke i det hele tatt med en styrespak.
 
 Legg dog merke til at ekstensiv testing av ulike nettlesere og enheter
 ikke har blitt gjort. Gruppen kan med andre ord ikke gå god for at
-spillet kjører feilfritt over alt. Garbage Alert er hovedsaklig testet i
+spillet kjører feilfritt over alt. \emph{Garbage Alert} er hovedsaklig testet i
 Google Chrome (versjon 18 og over) og Opera (versjon 11.6 og over).
 Spillet har blitt testet noe på mobiltelefoner, men ikke ut over det å
 sikre at spillet fungerer \emph{greit}. I en endelig versjon må
@@ -74,7 +76,7 @@ grensesnittet tilpasses bedre, og ekstensiv testing måtte vært utført
 for å sikre at spillet fungerer skikkelig.
 
 \subsubsection{Audiovisuelt innhold}
-Garbage Alerts visuelle stil er ment å være leken og samtidig
+{Garbage Alerts} visuelle stil er ment å være leken og samtidig
 oversiktlig, og dets grafiske stil er inspirert av den klassiske
 spillserien Advance Wars.
 
@@ -97,7 +99,7 @@ rammeverk er noe umodne.  Logisk kodestruktur og -arkitektur har ikke
 vært noe som har blitt tenkt mye på, og kun enkle grep har blitt gjort
 for å gjøre koden noe enklere å skrive. Dette gjelder spesielt den koden
 som har blitt arvet fra den tidligere prototypen, kode som med god grunn
-kan omtales som et ''lappeteppe''.
+kan omtales som et ``lappeteppe''.
 
 For å øke spillets modifiserbarhet og kodens lesbarhet er de ulike
 elementene i spillet delt inn i egne JavaScript-filer. Dette for å
@@ -111,7 +113,7 @@ større bildefil for å forbedre innlastingstiden.
 
 \subsubsection{Problemer og alternativer}
 Siden det er berøringsbaserte mobiltelefoner som er målplattform for
-spillet vil de naturlige alternativene være å realisere Garbage Alert
+spillet vil de naturlige alternativene være å realisere \emph{Garbage Alert}
 som en såkalt \emph{native} applikasjon\footnote{En \emph{native}
 applikasjon er en skreddersydd applikasjon skrevet direkte til ett
 enkelt av de ulike mobiltelefonoperativsystemene.}, noe som i
@@ -136,14 +138,14 @@ Flerspiller-delen av spillet har ikke blitt implementert, ei heller en
 kunstig intelligens til motspilleren.
 
 \subsubsection{Ressurser}
-Garbage Alert kan utvikles i hvilken som helst applikasjon som er i
+\emph{Garbage Alert} kan utvikles i hvilken som helst applikasjon som er i
 stand til å redigere rene tekstfiler. Kildekontroll gjøres via Git, og
 koden er lagret på
 GitHub\footnote{\url{https://github.com/aspic/Garbage-Alert}}. Spillet
 kan og spilles fra spillet nettside på
 \url{http://aspic.github.com/Garbage-Alert}.
 
-\subsubsection{Hvordan spille Garbage Alert lokalt}
+\subsubsection{Hvordan spille \emph{Garbage Alert} lokalt}
 Forutsett at du har Git og Python\footnote{Hvilken som helst
 server-programvare kan benyttes, Python nevnes her da dette
 verktøysettet er temmelig utbredt og er enkelt å starte.} installert,
@@ -155,5 +157,5 @@ Først, last ned kildefilene fra GitHub med kommandoen
 Spillet vil da lastes ned til mappen \texttt{Garbage-Alert}. Navigér til
 mappa kalt \texttt{webver} under denne  og start spillet med kommandoen
 \texttt{python -m SimpleHTTPServer 8080}. Start en kompatibel nettleser
-og navigér til URLen \url{http://localhost:8080}. Garbage Alert vil nå
+og navigér til URLen \url{http://localhost:8080}. \emph{Garbage Alert} vil nå
 kjøre lokalt på din datamaskin.
